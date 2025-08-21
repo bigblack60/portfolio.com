@@ -1,32 +1,25 @@
-<div id="welcome-overlay"><h1>Welcome to my Portfolio scroll down</h1></div>
-
-
-
-
-
-<img src="https://raw.githubusercontent.com/bigblack60/bigblack-portfolio.com/72f61489f3971d88a70c52801fb2aba1afd30a1b/WhatsApp%20Image%202025-08-13%20at%2020.20.24_6037147a.jpg" alt="https://raw.githubusercontent.com/bigblack60/bigblack-portfolio.com/72f61489f3971d88a70c52801fb2aba1afd30a1b/WhatsApp%20Image%202025-08-13%20at%2020.20.24_6037147a.jpg" style="width: 200px; height: 200px; border-radius: 50%;">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Big Black | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
   <style>
     body {
       background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      scroll-behavior: smooth;
     }
     h1, h2, h3 {
       color: #fff;
     }
     .section {
-      margin-bottom: 40px;
+      margin: 80px 20px;
     }
     .card {
       background-color: #111;
@@ -41,286 +34,119 @@
     ul {
       padding-left: 20px;
     }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #111;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+    .navbar h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-links a {
+      color: #fff;
+      font-weight: bold;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #111;
+        flex-direction: column;
+        width: 200px;
+        padding: 10px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* Profile */
+    .profile {
+      text-align: center;
+      margin-top: 100px;
+    }
+    .profile img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+    }
+
+    /* Welcome overlay */
+    #welcome-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.95);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 24px;
+      z-index: 2000;
+    }
   </style>
 </head>
 <body>
 
-  <h1>BIG BLACK</h1>
-<p><strong>Community Manager & Pro Moderator<p><strong>|| Collab Manager || Raid Lead || Shiller (Web3/NFTs/DAOs)</strong></p>
+  <!-- Welcome Overlay -->
+  <div id="welcome-overlay"><h1>Welcome to BIG BLACK Portfolio</h1></div>
 
-  
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>BIG BLACK</h1>
+    <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#employment">Employment</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
 
-  <div class="section">
+  <!-- Profile -->
+  <div class="profile">
+    <img src="https://raw.githubusercontent.com/bigblack60/bigblack-portfolio.com/72f61489f3971d88a70c52801fb2aba1afd30a1b/WhatsApp%20Image%202025-08-13%20at%2020.20.24_6037147a.jpg" alt="Profile">
+    <h2>Community Manager & Pro Moderator</h2>
+    <p>|| Collab Manager || Raid Lead || Shiller (Web3/NFTs/DAOs)</p>
+  </div>
+
+  <!-- About -->
+  <div id="about" class="section">
     <h2>About Me</h2>
     <div class="card">
-      <p>I'm a passionate Web3 Community Manager & Moderator dedicated to building and managing vibrant online communities. With a strong background in community engagement and moderation, I help create and maintain positive online spaces where people can connect, share ideas, and grow. Let's connect and build something amazing together scroll down to read more about me.</p>
-  </div>
-
-    
-  <div class="section">
-    <h2>Employment</h2>
-    <div class="card">
-      <h3>Narrrf's World NFT</h3>
-      <ul>
-        <li>Wallet and sync support</li>
-        <li>Game nights, livestreams, and promo content</li>
-        <li>Community marketing and Discord outreach</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Danny Wet Raccoon</h3>
-      <ul>
-        <li>Grew server from 7k to 16k+</li>
-        <li>Moderation and DAO support</li>
-        <li>Conflict resolution and rules enforcement</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>7heaven NFT Community</h3>
-      <ul>
-        <li>Led user engagement & planning</li>
-        <li>Organized AMAs & raids</li>
-        <li>Tech and community support</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>PacTON Official</h3>
-      <ul>
-        <li>Community management and engagement</li>
-<li>Event coordination and support</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>PAINLESS COIN</h3>
-      <ul>
-        <li>Moderation and community support</li>
-        <li>Shilling and promotional activities</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>ALPHA COIN</h3>
-      <ul>
-        <li>Community building and management</li>
-        <li>Event planning and execution</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>HERO COIN</h3>
-      <ul>
-        <li>Moderation and conflict resolution</li>
-        <li>Community engagement strategies</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>MONKEY COIN</h3>
-      <ul>
-        <li>Community growth and management</li>
-        <li>Event hosting and coordination</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>RAIDERZ</h3>
-      <ul>
-        <li>Community support and moderation</li>
-        <li>Event planning and execution</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>PEPEALPHA COIN</h3>
-      <ul>
-        <li>Community engagement and support</li>
-        <li>Shilling and promotional activities</li>
-      </ul>
+      <p>I'm a passionate Web3 Community Manager & Moderator dedicated to building and managing vibrant online communities. With a strong background in community engagement and moderation, I help create and maintain positive online spaces where people can connect, share ideas, and grow. Let's connect and build something amazing together.</p>
     </div>
   </div>
 
-  <div class="section">
-    <h2>Skills</h2>
-    <div class="card">
-<p>Community Management, Conflict Resolution, Bot Development, Shilling, Raiding, Event Planning, NFTs, DAOs, Memecoins, Communication, Content Strategy, Raid Lead, Shilling Manager</p>
-    </div>
-  </div>
 
-    
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Services</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #2c1810, #8B4513, #CD853F);
-            margin: 0;
-            padding: 20px;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-        }
-
-        .header {
-            background: linear-gradient(45deg, #FF6B35, #F7931E);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 18px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .table-container {
-            display: flex;
-            background: #000;
-        }
-
-        .services-column {
-            flex: 1;
-            background: rgba(139, 69, 19, 0.8);
-        }
-
-        .status-column {
-            width: 150px;
-            background: rgba(220, 20, 60, 0.9);
-        }
-
-        .column-header {
-            padding: 12px 20px;
-            font-weight: bold;
-            color: white;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .services-column .column-header {
-            background: rgba(139, 69, 19, 1);
-        }
-
-        .status-column .column-header {
-            background: rgba(220, 20, 60, 1);
-            text-align: center;
-        }
-
-        .row {
-            display: flex;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .row:last-child {
-            border-bottom: none;
-        }
-
-        .service-cell {
-            flex: 1;
-            padding: 12px 20px;
-            color: white;
-            background: rgba(101, 67, 33, 0.8);
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .status-cell {
-            width: 150px;
-            padding: 12px 20px;
-            text-align: center;
-            background: rgba(139, 0, 0, 0.8);
-        }
-
-        .status-indicator {
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(45deg, #FF6B35, #F7931E);
-            border-radius: 50%;
-            margin: 0 auto;
-            box-shadow: 0 0 10px rgba(50, 205, 50, 0.5);
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% {
-                box-shadow: 0 0 10px rgba(50, 205, 50, 0.5);
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(50, 205, 50, 0.8);
-            }
-            100% {
-                box-shadow: 0 0 10px rgba(50, 205, 50, 0.5);
-            }
-        }
-
-        .row:hover .service-cell {
-            background: rgba(139, 69, 19, 1);
-        }
-
-        .row:hover .status-cell {
-            background: rgba(220, 20, 60, 0.9);
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="table-container">
-            <div class="services-column">
-                <div class="column-header">The Team Services</div>
-                <div class="row">
-                    <div class="service-cell">Project Management</div></div><div class="row">
-                    <div class="service-cell">Community Management</div></div><div class="row">
-                    <div class="service-cell">Moderation</div></div><div class="row">
-                    <div class="service-cell">Shillers/Raid lead</div></div><div class="row">
-                    <div class="service-cell">Callers/Hype Pushers</div></div><div class="row">
-                    <div class="service-cell">Collaboration Management</div></div><div class="row">
-                    <div class="service-cell">Marketing chief</div></div><div class="row">
-                    <div class="service-cell">Advisors/Strategy Leads</div></div><div class="row">
-                    <div class="service-cell">Graphic/Visual Designer</div></div></div><div class="status-column">
-                <div class="column-header">Web3 Growth</div>
-                <div class="row">
-                    <div class="status-cell">
-                        <div class="status-indicator"></div>
-                    </div></div><div class="row">
-                    <div class="status-cell">
-                        <div class="status-indicator"></div>
-                    </div></div><div class="row">
-                    <div class="status-cell">
-                        <div class="status-indicator"></div>
-                    </div></div><div class="row">
-                    <div class="status-cell">
-                        <div class="status-indicator"></div>
-                    </div></div><div class="row">
-                    <div class="status-cell">
-                        <div class="status-indicator"></div>
-                    </div></div><div class="row">
-                    <div class="status-cell">
-                        <div class="status-indicator"></div>
-                    </div></div><div class="row">
-                    <div class="status-cell">
-                        <div class="status-indicator"></div>
-                    </div></div><div class="row">
-                    <div class="status-cell">
-                        <div class="status-indicator"></div>
-                    </div></div><div class="row"><div class="status-cell">
-                        <div class="status-indicator"></div></div>
-                </div></div>
-        </div>
-    </div>
-</body>
-</html>
-
-
-
-    
-
-  <div class="section">
+ <!-- Contact -->
+  <div id="contact" class="section">
     <h2>Contact</h2>
     <div class="card">
       <p><strong>Telegram:</strong> t.me/bigblack60q</p>
@@ -330,7 +156,54 @@
     </div>
   </div>
 
-  <div class="section">
+
+
+ <!-- Skills -->
+  <div id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="card">
+      <p>Community Management, Conflict Resolution, Bot Development, Shilling, Raiding, Event Planning, NFTs, DAOs, Memecoins, Communication, Content Strategy, Raid Lead, Shilling Manager</p>
+    </div>
+  </div>
+
+  
+  <!-- Employment -->
+  <div id="employment" class="section">
+    <h2>Employment</h2>
+
+    <div class="card"><h3>Narrrf's World NFT</h3>
+      <ul><li>Wallet and sync support</li><li>Game nights, livestreams, and promo content</li><li>Community marketing and Discord outreach</li></ul>
+    </div>
+    <div class="card"><h3>Danny Wet Raccoon</h3>
+      <ul><li>Grew server from 7k to 16k+</li><li>Moderation and DAO support</li><li>Conflict resolution and rules enforcement</li></ul>
+    </div>
+    <div class="card"><h3>7heaven NFT Community</h3>
+      <ul><li>Led user engagement & planning</li><li>Organized AMAs & raids</li><li>Tech and community support</li></ul>
+    </div>
+    <div class="card"><h3>PacTON Official</h3>
+      <ul><li>Community management and engagement</li><li>Event coordination and support</li></ul>
+    </div>
+    <div class="card"><h3>PAINLESS COIN</h3>
+      <ul><li>Moderation and community support</li><li>Shilling and promotional activities</li></ul>
+    </div>
+    <div class="card"><h3>ALPHA COIN</h3>
+      <ul><li>Community building and management</li><li>Event planning and execution</li></ul>
+    </div>
+    <div class="card"><h3>HERO COIN</h3>
+      <ul><li>Moderation and conflict resolution</li><li>Community engagement strategies</li></ul>
+    </div>
+    <div class="card"><h3>MONKEY COIN</h3>
+      <ul><li>Community growth and management</li><li>Event hosting and coordination</li></ul>
+    </div>
+    <div class="card"><h3>RAIDERZ</h3>
+      <ul><li>Community support and moderation</li><li>Event planning and execution</li></ul>
+    </div>
+    <div class="card"><h3>PEPEALPHA COIN</h3>
+      <ul><li>Community engagement and support</li><li>Shilling and promotional activities</li></ul>
+    </div>
+  </div>
+
+<div class="section">
     <h2>Note to Founders</h2>
     <div class="card">
       <p><strong> NOTE TO DEVS </strong></p>
@@ -342,11 +215,26 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<footer class="footer">
-  <p>&copy; Web3 Community Manager & Moderator | Building and managing vibrant online communities</p>
-  <ul>
-    <li><a href="                 
-    <li></li>
-          <li><a href="#">Community Guidelines</a></li>
-  </ul>
-</footer>
+  
+
+  <!-- Footer -->
+  <footer class="footer" style="text-align:center;padding:20px;background:#111;">
+    <p>&copy; Web3 Community Manager & Moderator | Building and managing vibrant online communities</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Welcome overlay
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("welcome-overlay").style.display = "none";
+      }, 2000);
+    });
+
+    // Menu toggle
+    document.querySelector(".menu-toggle").addEventListener("click", () => {
+      document.querySelector(".nav-links").classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
