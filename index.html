@@ -135,6 +135,223 @@
     </div>
   </div>
 
+    
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Services</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2c1810, #8B4513, #CD853F);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .header {
+            background: linear-gradient(45deg, #FF6B35, #F7931E);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .table-container {
+            display: flex;
+            background: #000;
+        }
+
+        .services-column {
+            flex: 1;
+            background: rgba(139, 69, 19, 0.8);
+        }
+
+        .status-column {
+            width: 150px;
+            background: rgba(220, 20, 60, 0.9);
+        }
+
+        .column-header {
+            padding: 12px 20px;
+            font-weight: bold;
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .services-column .column-header {
+            background: rgba(139, 69, 19, 1);
+        }
+
+        .status-column .column-header {
+            background: rgba(220, 20, 60, 1);
+            text-align: center;
+        }
+
+        .row {
+            display: flex;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .service-cell {
+            flex: 1;
+            padding: 12px 20px;
+            color: white;
+            background: rgba(101, 67, 33, 0.8);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .status-cell {
+            width: 150px;
+            padding: 12px 20px;
+            text-align: center;
+            background: rgba(139, 0, 0, 0.8);
+        }
+
+        .status-indicator {
+            width: 20px;
+            height: 20px;
+            background: #32CD32;
+            border-radius: 50%;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(50, 205, 50, 0.5);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 10px rgba(50, 205, 50, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(50, 205, 50, 0.8);
+            }
+            100% {
+                box-shadow: 0 0 10px rgba(50, 205, 50, 0.5);
+            }
+        }
+
+        .row:hover .service-cell {
+            background: rgba(139, 69, 19, 1);
+        }
+
+        .row:hover .status-cell {
+            background: rgba(220, 20, 60, 0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="table-container">
+            <div class="services-column">
+                <div class="column-header">The Team Services</div>
+                <div class="row">
+                    <div class="service-cell">Project Management</div>
+                </div>
+                <div class="row">
+                    <div class="service-cell">Community Management</div>
+                </div>
+                <div class="row">
+                    <div class="service-cell">Moderation</div>
+                </div>
+                <div class="row">
+                    <div class="service-cell">Shillers/Raid lead</div>
+                </div>
+                <div class="row">
+                    <div class="service-cell">Callers/Hype Pushers</div>
+                </div>
+                <div class="row">
+                    <div class="service-cell">Collaboration Management</div>
+                </div>
+                <div class="row">
+                    <div class="service-cell">Marketing chief</div>
+                </div>
+                <div class="row">
+                    <div class="service-cell">Advisors/Strategy Leads</div>
+                </div>
+                <div class="row">
+                    <div class="service-cell">Graphic/Visual Designer</div>
+                </div>
+            </div>
+            <div class="status-column">
+                <div class="column-header">Web3 Growth</div>
+                <div class="row">
+                    <div class="status-cell">
+                        <div class="status-indicator"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="status-cell">
+                        <div class="status-indicator"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="status-cell">
+                        <div class="status-indicator"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="status-cell">
+                        <div class="status-indicator"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="status-cell">
+                        <div class="status-indicator"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="status-cell">
+                        <div class="status-indicator"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="status-cell">
+                        <div class="status-indicator"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="status-cell">
+                        <div class="status-indicator"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="status-cell">
+                        <div class="status-indicator"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+    
+
   <div class="section">
     <h2>Contact</h2>
     <div class="card">
