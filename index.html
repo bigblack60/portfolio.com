@@ -79,7 +79,7 @@
       display: block;
     }
 
-    /* Profile */
+    /* Profile (centered fix for your intro) */
     .profile {
       text-align: center;
       padding: 40px 20px 20px;
@@ -93,10 +93,11 @@
       margin-top: 15px;
       font-size: 1.8rem;
     }
-    .profile h3 {
+    .profile p {
+      max-width: 90%;
+      margin: 10px auto;
       font-size: 1rem;
-      font-weight: 400;
-      color: #aaa;
+      font-weight: 500;
     }
 
     /* Sections */
@@ -140,9 +141,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 1.5rem;
+      font-size: 1.3rem; /* smaller professional size */
       font-weight: 600;
       z-index: 9999;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+      text-align: center;
+      padding: 0 20px;
     }
   </style>
 </head>
@@ -167,11 +172,12 @@
     </nav>
   </header>
 
-<img src="WhatsApp Image 2025-08-13 at 20.20.24_6037147a.jpg" alt="WhatsApp Image 2025-08-13 at 20.20.24_6037147a.jpg" style="width: 200px; height: 200px; border-radius: 50%;">
-
-
-  <h1>BIG BLACK</h1>
-  <p><strong>Community Manager || Pro Moderator || Graphic Designer || Web Designer || Raid Lead || Shiller || Marketer (Web3/NFTs/DAOs)</strong></p>
+  <!-- Intro Profile Section -->
+  <div class="profile">
+    <img src="WhatsApp Image 2025-08-13 at 20.20.24_6037147a.jpg" alt="Profile Picture">
+    <h1>BIG BLACK</h1>
+    <p><strong>Community Manager || Pro Moderator || Graphic Designer || Web Designer || Raid Lead || Shiller || Marketer (Web3/NFTs/DAOs)</strong></p>
+  </div>
 
   <!-- About -->
   <div class="section" id="about">
@@ -180,8 +186,6 @@
       <p>Just a chill web3 guy with solid experience in building, moderating, launching, and managing thriving Web3 communities. I align community vibes with brand goals, organize events, moderates, manage community, automate bots, and handle supports.</p>
     </div>
   </div>
-
-
 
   <!-- Contact Info -->
   <section id="contact" class="section">
@@ -196,7 +200,6 @@
     </div>
   </section>
 
-  
 
   <!-- Employments -->
    <div class="section">
@@ -360,10 +363,10 @@
     </div>
   </section>
 
-  <footer>
+  
+   <footer>
     <p>&copy; CM.MOD BIG BLACK Portfolio</p>
   </footer>
-
 
   <script>
     // Toggle Hamburger Menu
@@ -376,7 +379,11 @@
     // Welcome overlay
     window.addEventListener("load", () => {
       setTimeout(() => {
-        document.getElementById("welcome-overlay").style.display = "none";
+        const overlay = document.getElementById("welcome-overlay");
+        overlay.style.opacity = "0";
+        setTimeout(() => {
+          overlay.style.display = "none";
+        }, 500);
       }, 2000);
     });
   </script>
