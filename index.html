@@ -551,81 +551,86 @@ function toggleHireMenu() {
   </div>
 </section>
 
- <!-- Core Skills -->
+<!-- Core Skills -->
 <section id="skills" style="padding: 70px 20px; background: #000; text-align: center;">
-  <h2 style="font-size: 2.2rem; margin-bottom: 30px; color: #fff;">🛠️ Core Skills</h2>
+  <h2 style="font-size: 2.2rem; margin-bottom: 40px; color: #fff;">🛠️ Core Skills</h2>
 
-  <div style="background: #111; padding: 30px; border-radius: 12px; max-width: 900px; margin: 0 auto 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.6); display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px;">
+  <div style="background: #111; padding: 30px; border-radius: 12px; max-width: 950px; margin: 0 auto 40px; box-shadow: 0 6px 16px rgba(0,0,0,0.7); display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 35px;">
 
     <!-- Skill Item -->
-    <div style="text-align: center; color: #ddd;">
-      <div class="circle" data-percent="100" style="--percent:100;"></div>
+    <div class="skill">
+      <div class="circle" data-percent="100"></div>
       <p>Community Management</p>
     </div>
 
-    <div style="text-align: center; color: #ddd;">
-      <div class="circle" data-percent="95" style="--percent:95;"></div>
+    <div class="skill">
+      <div class="circle" data-percent="95"></div>
       <p>Content Creation</p>
     </div>
 
-    <div style="text-align: center; color: #ddd;">
-      <div class="circle" data-percent="98" style="--percent:98;"></div>
+    <div class="skill">
+      <div class="circle" data-percent="98"></div>
       <p>Moderation</p>
     </div>
 
-    <div style="text-align: center; color: #ddd;">
-      <div class="circle" data-percent="100" style="--percent:100;"></div>
+    <div class="skill">
+      <div class="circle" data-percent="100"></div>
       <p>Web3 Knowledge</p>
     </div>
 
-    <div style="text-align: center; color: #ddd;">
-      <div class="circle" data-percent="95" style="--percent:95;"></div>
+    <div class="skill">
+      <div class="circle" data-percent="95"></div>
       <p>Communication</p>
     </div>
 
-    <div style="text-align: center; color: #ddd;">
-      <div class="circle" data-percent="90" style="--percent:90;"></div>
+    <div class="skill">
+      <div class="circle" data-percent="90"></div>
       <p>Event Hosting</p>
     </div>
 
-    <div style="text-align: center; color: #ddd;">
-      <div class="circle" data-percent="92" style="--percent:92;"></div>
+    <div class="skill">
+      <div class="circle" data-percent="92"></div>
       <p>Analytics</p>
     </div>
 
-    <div style="text-align: center; color: #ddd;">
-      <div class="circle" data-percent="97" style="--percent:97;"></div>
+    <div class="skill">
+      <div class="circle" data-percent="97"></div>
       <p>Conflict Resolution</p>
     </div>
 
   </div>
 </section>
 
-<!-- Circle Progress Styles -->
+<!-- Styles -->
 <style>
+.skill {
+  text-align: center;
+  color: #ddd;
+  font-size: 0.95rem;
+}
+
 .circle {
-  --size: 120px;
-  --bar-width: 10px;
-  --track: #333;
-  --fill: conic-gradient(#00c6ff calc(var(--percent) * 1%), #0072ff calc(var(--percent) * 1%), transparent 0);
-  
+  --size: 90px; /* smaller circle */
+  --bar-width: 8px;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background: var(--track);
+  background: conic-gradient(#00c6ff 0%, #0072ff 0%, #333 0%);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   margin: 0 auto 12px;
+  transition: background 1.5s ease, box-shadow 0.4s ease;
 }
 
 .circle::before {
   content: attr(data-percent) "%";
   position: absolute;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   color: #fff;
+  z-index: 2;
 }
 
 .circle::after {
@@ -636,9 +641,43 @@ function toggleHireMenu() {
   border-radius: 50%;
   z-index: 1;
 }
+
+/* Glow effect on hover */
+.circle:hover {
+  box-shadow: 0 0 15px #00c6ff, 0 0 25px #0072ff;
+}
+
+/* Animation on scroll */
+.circle.animate {
+  background: conic-gradient(
+    #00c6ff calc(var(--percent) * 1%),
+    #0072ff calc(var(--percent) * 1%),
+    #333 0%
+  );
+}
 </style>
 
+<!-- Animation Script -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const circles = document.querySelectorAll(".circle");
 
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const percent = el.getAttribute("data-percent");
+        el.style.setProperty("--percent", percent);
+        el.classList.add("animate");
+      }
+    });
+  }, { threshold: 0.5 });
+
+  circles.forEach(circle => observer.observe(circle));
+});
+</script>
+
+  
 <!-- Tools -->
 <section style="padding: 70px 20px; background: #000; text-align: center;">
   <h2 style="font-size: 2.2rem; margin-bottom: 30px; color: #fff;">⚙️ Tools & Platforms</h2>
