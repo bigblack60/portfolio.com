@@ -322,6 +322,7 @@ function toggleHireMenu() {
 </section>
 
 
+
 <!-- BIG BLACK ($BVK) - LaunchLab Style with Live Pulse -->
 <div class="coin-box">
   <div class="coin-header">
@@ -346,20 +347,20 @@ function toggleHireMenu() {
       <li>Vol <span>$78.6 K</span></li>
       <li>LP <span>&lt;$21 K ⚠</span></li>
       <li>Sup <span>1 B / 1 B</span></li>
-      <li>1 H <span>17% 🅑 0 Ⓢ 0</span></li>
+      <li>1 H <span>8% 🅑 0 Ⓢ 0</span></li>
       <li>ATH <span>$51.4 K (−3% / 1 D)</span></li>
     </ul>
   </div>
 
   <div class="section">
     <h3>🔗 Socials</h3>
-    <p>𝕏 [♽] • TG • Web •</p>
+    <p>𝕏 [♽] • TG • Web • </p>
   </div>
 
   <div class="section">
     <h3>🔒 Security</h3>
     <ul>
-      <li>Top 10 <span>0% | 2 (total)</span></li>
+      <li>Top 10 <span>13% | 8 (total)</span></li>
       <li>TH <span>0.0 | 0.0 | 0.0</span></li>
       <li>Dev Toks <span>1 / 0 (0%) [info]</span></li>
       <li>Dev Sold <span>🟢 🅳</span></li>
@@ -374,7 +375,22 @@ function toggleHireMenu() {
   </div>
 </div>
 
+<!-- 🪙 Overview Section (with Fade-In + Glow Edge) -->
+<section id="overview" class="hidden">
+  <h2>Overview</h2>
+  <div class="overview-card">
+    <p>
+      <strong>BIG BLACK ($BVK)</strong> is a Proof-of-Work-inspired memecoin
+      i built on <span>Solana blockchain</span> through LaunchLab.
+      Designed for experimentation and community engagement,
+      <strong>BVK</strong> represents transparency, energy, and the playful
+      spirit of decentralized culture — fusing innovation with on-chain fun.
+    </p>
+  </div>
+</section>
+
 <style>
+/* ================== COIN BOX ================== */
 .coin-box {
   background:#0b0b0f;
   border:1px solid #2a2a35;
@@ -401,10 +417,7 @@ function toggleHireMenu() {
   color:#c49aff;
   font-size:1.3rem;
 }
-.symbol {
-  color:#00ffb0;
-  font-weight:500;
-}
+.symbol { color:#00ffb0; font-weight:500; }
 .coin-sub {
   font-size:0.9rem;
   color:#9fa2b5;
@@ -453,13 +466,86 @@ ul li span { color:#aaffcc; }
   font-size:0.85rem;
   text-align:center;
 }
-.tags,.integrations {
-  color:#a0a0c0;
-  margin:4px 0;
-}
+.tags,.integrations { color:#a0a0c0; margin:4px 0; }
 .try strong { color:#b992ff; }
+
+/* ================== OVERVIEW SECTION ================== */
+#overview {
+  background:#000;
+  padding:50px 20px 70px;
+  max-width:850px;
+  margin:40px auto;
+  text-align:center;
+  color:#fff;
+  transition:opacity 1s ease, transform 1s ease;
+}
+#overview h2 {
+  font-size:2rem;
+  margin-bottom:25px;
+  color:#c9a4ff;
+  letter-spacing:0.5px;
+}
+.overview-card {
+  background:#111;
+  padding:35px 25px;
+  border-radius:14px;
+  box-shadow:0 0 20px rgba(108,99,255,0.3);
+  border:1px solid #2a2a35;
+  max-width:850px;
+  margin:0 auto;
+  text-align:left;
+  line-height:1.8;
+  color:#ccc;
+  border-left:4px solid #6c63ff;
+  position:relative;
+}
+.overview-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:14px;
+  padding:2px;
+  background:linear-gradient(90deg,#6c63ff,#00c6ff,#6c63ff);
+  background-size:200% 200%;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+  animation:glowEdge 6s linear infinite;
+}
+@keyframes glowEdge {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+.overview-card strong { color:#fff; }
+.overview-card span { color:#6c63ff; font-weight:600; }
+
+/* ✨ Scroll Animation */
+.hidden { opacity:0; transform:translateY(40px); }
+.visible { opacity:1; transform:translateY(0); }
+
+/* Responsive */
+@media (max-width:768px) {
+  #overview { padding:40px 20px; }
+  .overview-card { padding:28px 20px; font-size:0.95rem; }
+}
 </style>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const overview = document.querySelector("#overview");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        overview.classList.add("visible");
+        observer.unobserve(overview);
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(overview);
+});
+</script>
+  
   
 <!-- Employments & Projects -->
 <section id="employments" style="padding: 70px 20px; background: #000; text-align: center;">
@@ -708,83 +794,67 @@ ul li span { color:#aaffcc; }
   </div>
 </section>
 
-<!-- Core Skills -->
+
+<!-- 🌌 Core Skills Section (Pro Version with Smooth Fill Animation) -->
 <section id="skills" style="padding: 60px 20px; background: #000; text-align: center;">
-  <h2 style="font-size: 2.2rem; margin-bottom: 40px; color: #fff;">𝐂𝐨𝐫𝐞 𝐒𝐤𝐢𝐥𝐥𝐬🛠️</h2>
+  <h2 style="font-size: 2.1rem; margin-bottom: 35px; color: #fff; letter-spacing: 0.5px;">
+    𝐂𝐨𝐫𝐞 𝐒𝐤𝐢𝐥𝐥𝐬 🛠
+  </h2>
 
-  <div style="background: #111; padding: 30px; border-radius: 12px; max-width: 950px; margin: 0 auto 40px; box-shadow: 0 6px 16px rgba(0,0,0,0.7); display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 35px;">
-
-    <!-- Skill Item -->
-    <div class="skill">
-      <div class="circle" data-percent="100"></div>
-      <p>Community Management</p>
-    </div>
-
-    <div class="skill">
-      <div class="circle" data-percent="100"></div>
-      <p>Moderation</p>
-    </div>
-
-    <div class="skill">
-      <div class="circle" data-percent="95"></div>
-      <p>Marketing</p>
-    </div>
-    
-    <div class="skill">
-      <div class="circle" data-percent="100"></div>
-      <p>Web3 Knowledge</p>
-    </div>
-
-    <div class="skill">
-      <div class="circle" data-percent="95"></div>
-      <p>Communication</p>
-    </div>
-
-    <div class="skill">
-      <div class="circle" data-percent="90"></div>
-      <p>Raiding</p>
-    </div>
-
-    <div class="skill">
-      <div class="circle" data-percent="92"></div>
-      <p>Shilling</p>
-    </div>
-
-    <div class="skill">
-      <div class="circle" data-percent="97"></div>
-      <p>Conflict Resolution</p>
-    </div>
-
+  <div class="skills-grid">
+    <div class="skill"><div class="circle" data-percent="100"></div><p>Community Management</p></div>
+    <div class="skill"><div class="circle" data-percent="100"></div><p>Moderation</p></div>
+    <div class="skill"><div class="circle" data-percent="95"></div><p>Marketing</p></div>
+    <div class="skill"><div class="circle" data-percent="100"></div><p>Web3 Knowledge</p></div>
+    <div class="skill"><div class="circle" data-percent="95"></div><p>Communication</p></div>
+    <div class="skill"><div class="circle" data-percent="90"></div><p>Raiding</p></div>
+    <div class="skill"><div class="circle" data-percent="92"></div><p>Shilling</p></div>
+    <div class="skill"><div class="circle" data-percent="97"></div><p>Conflict Resolution</p></div>
   </div>
 </section>
 
-<!-- Styles -->
 <style>
-.skill {
-  text-align: center;
-  color: #ddd;
-  font-size: 0.95rem;
+/* 🌑 Layout & Grid */
+.skills-grid {
+  background: #111;
+  padding: 35px 25px;
+  border-radius: 14px;
+  max-width: 950px;
+  margin: 0 auto;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.7);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 30px;
+  justify-items: center;
 }
 
+.skill {
+  text-align: center;
+  color: #ccc;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* 🌀 Skill Circles */
 .circle {
-  --size: 90px; /* smaller circle */
-  --bar-width: 8px;
+  --size: 75px;
+  --bar-width: 7px;
   width: var(--size);
   height: var(--size);
   border-radius: 50%;
-  background: conic-gradient(#00c6ff 0%, #0072ff 0%, #333 0%);
+  background: conic-gradient(#00c6ff 0%, #0072ff 0%, #222 0%);
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  margin: 0 auto 12px;
+  margin: 0 auto 10px;
   transition: background 1.5s ease, box-shadow 0.4s ease;
 }
 
 .circle::before {
   content: attr(data-percent) "%";
   position: absolute;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: bold;
   color: #fff;
   z-index: 2;
@@ -799,33 +869,46 @@ ul li span { color:#aaffcc; }
   z-index: 1;
 }
 
-/* Glow effect on hover */
+/* ✨ Hover Glow */
 .circle:hover {
-  box-shadow: 0 0 15px #00c6ff, 0 0 25px #0072ff;
+  box-shadow: 0 0 10px #00c6ff, 0 0 18px #0072ff;
 }
 
-/* Animation on scroll */
-.circle.animate {
-  background: conic-gradient(
-    #00c6ff calc(var(--percent) * 1%),
-    #0072ff calc(var(--percent) * 1%),
-    #333 0%
-  );
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .circle { --size: 68px; --bar-width: 6px; }
+  .skills-grid { gap: 25px; padding: 25px 20px; }
+  .skill p { font-size: 0.85rem; }
+}
+@media (max-width: 480px) {
+  .circle { --size: 60px; }
+  .skill p { font-size: 0.8rem; }
 }
 </style>
 
-<!-- Animation Script -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const circles = document.querySelectorAll(".circle");
+
+  const animateCircle = (el, targetPercent) => {
+    let current = 0;
+    const step = () => {
+      if (current < targetPercent) {
+        current++;
+        el.style.background = conic-gradient(#00c6ff ${current}%, #0072ff ${current}%, #222 0%);
+        requestAnimationFrame(step);
+      }
+    };
+    step();
+  };
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
-        const percent = el.getAttribute("data-percent");
-        el.style.setProperty("--percent", percent);
-        el.classList.add("animate");
+        const percent = parseInt(el.getAttribute("data-percent"));
+        animateCircle(el, percent);
+        observer.unobserve(el);
       }
     });
   }, { threshold: 0.5 });
@@ -833,7 +916,6 @@ document.addEventListener("DOMContentLoaded", () => {
   circles.forEach(circle => observer.observe(circle));
 });
 </script>
-
   
 <!-- Tools -->
 <section style="padding: 70px 20px; background: #000; text-align: center;">
