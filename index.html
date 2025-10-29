@@ -277,73 +277,134 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
 <!-- About Me -->
-<section id="about" style="padding: 70px 20px; background: #000; text-align: center;">
-  <h2 style="font-size: 2.2rem; margin-bottom: 30px; color: #fff;">𝐀𝐛𝐨𝐮𝐭 𝐌𝐞👋</h2>
-  
-  <div style="background: #111; padding: 30px; border-radius: 14px; max-width: 900px; margin: 0 auto; 
-              box-shadow: 0 6px 18px rgba(0,0,0,0.7); text-align: left; border: 1px solid #222;">
-    <p style="color: #ddd; font-size: 1.05rem; line-height: 1.7;">
- I’m a Web3 community specialist with solid experience in <strong>building, moderating, launching, and managing thriving blockchain communities</strong>. 
-      I align community culture with brand goals, organize engaging events, manage Discord & Telegram spaces, automate bots, and provide seamless support.  
-      My focus is on creating sustainable growth while keeping communities active, inclusive and goal driven.
+<section id="about" style="padding: 90px 20px; background: linear-gradient(180deg,#050008 0%,#0a0014 100%); text-align: center; position: relative; overflow:hidden;">
+  <div class="about-card" style="max-width: 900px; margin: 0 auto; background: rgba(17,17,17,0.95); padding: 45px 35px; border-radius: 14px;
+               box-shadow: 0 0 25px rgba(120,60,255,0.25), inset 0 0 15px rgba(90,0,255,0.1);
+               border: 1px solid rgba(150,90,255,0.3); position: relative; z-index:2;">
+    
+    <h2 style="font-size:2.4rem; color:#c59aff; margin-bottom:20px;">👋 𝐀𝐛𝐨𝐮𝐭 𝐌𝐞</h2>
+    <p style="color:#ddd; font-size:1.1rem; line-height:1.8;">
+      I’m a <strong style="color:#a372ff;">Web3 community specialist</strong> with deep experience in 
+      <strong>building, managing, and scaling blockchain communities</strong>.  
+      I create synergy between community energy and project vision — from <strong>Discord automation</strong> to 
+      <strong>Telegram growth</strong>, <strong>engagement planning</strong>, and <strong>on-chain brand loyalty</strong>.  
+      My mission is to grow communities that last — active, authentic, and driven by real participation.
     </p>
 
-    <!-- Hire Me Button with Dropdown -->
-    <div style="text-align: center; margin-top: 25px;">
-      <button onclick="toggleHireMenu()" 
-              style="background: linear-gradient(90deg,#0088cc,#00aaff); color: #fff; border: none; padding: 14px 26px; 
-                     font-size: 1rem; border-radius: 10px; cursor: pointer; transition: 0.3s; font-weight: bold;">
-         Hire Me
+    <!-- Hire Me Button -->
+    <div style="margin-top: 40px;">
+      <button onclick="toggleHirePopup()" class="hire-btn">
+        <span class="shimmer-text">💼 𝐇𝐢𝐫𝐞 𝐌𝐞</span>
       </button>
-
-      <div id="hireMenu" 
-           style="display: none; margin-top: 15px; background: #111; border-radius: 10px; 
-                  box-shadow: 0 6px 18px rgba(0,0,0,0.7); padding: 18px; text-align: left; border: 1px solid #222;">
-        <p style="margin: 0 0 10px; color: #aaa; font-size: 0.9rem;">Contact me via:</p>
-        <a href="https://t.me/bigblack60q" target="_blank" style="display: block; color: #0088cc; margin: 6px 0;">📩 Telegram DM</a>
-        <a href="https://x.com/bigblack60q" target="_blank" style="display: block; color: #1DA1F2; margin: 6px 0;">🐦 X (Twitter) DM</a>
-        <a href="https://discord.com/users/1287900278649126973" target="_blank" style="display: block; color: #5865F2; margin: 6px 0;">🎮 Discord DM</a>
-      </div>
     </div>
   </div>
+
+  <!-- Hire Me Popup -->
+  <div id="hirePopup" 
+       style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+              background: rgba(0,0,0,0.7); backdrop-filter: blur(6px); z-index: 999;
+              justify-content: center; align-items: center; transition: 0.4s;">
+    <div class="hire-modal" style="background: #111; border-radius: 14px; padding: 40px 30px; width: 320px;
+                box-shadow: 0 0 25px rgba(140,90,255,0.4), inset 0 0 20px rgba(80,0,255,0.1);
+                text-align: center; border: 1px solid rgba(150,90,255,0.3); animation: fadeInUp 0.4s ease;">
+      <h3 style="color:#c59aff; margin-bottom:15px;">🤝 Connect With Me</h3>
+      <p style="color:#aaa; font-size:0.95rem; margin-bottom:20px;">Choose your preferred platform:</p>
+
+      <a href="https://t.me/bigblack60q" target="_blank" 
+         style="display:block; color:#0088cc; background:#0d0d0d; border-radius:8px; margin:10px 0; padding:10px 0;
+                font-weight:bold; text-decoration:none; transition:0.3s; box-shadow:0 0 8px rgba(0,136,204,0.4);">
+        📩 Telegram
+      </a>
+      <a href="https://x.com/bigblack60q" target="_blank" 
+         style="display:block; color:#1DA1F2; background:#0d0d0d; border-radius:8px; margin:10px 0; padding:10px 0;
+                font-weight:bold; text-decoration:none; transition:0.3s; box-shadow:0 0 8px rgba(29,161,242,0.4);">
+        🐦 X (Twitter)
+      </a>
+      <a href="https://discord.com/users/1401653205464645729" target="_blank" 
+         style="display:block; color:#5865F2; background:#0d0d0d; border-radius:8px; margin:10px 0; padding:10px 0;
+                font-weight:bold; text-decoration:none; transition:0.3s; box-shadow:0 0 8px rgba(88,101,242,0.4);">
+        🎮 Discord
+      </a>
+
+      <button onclick="toggleHirePopup()" 
+              style="margin-top:20px; background:none; color:#888; border:none; font-size:0.9rem; cursor:pointer;">
+        ✖ Close
+      </button>
+    </div>
+  </div>
+
+  <style>
+    /* Shimmer Glow Button */
+    .hire-btn {
+      background: linear-gradient(90deg,#6c63ff,#9a80ff,#b68aff);
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.05rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 18px rgba(160,100,255,0.5);
+      transition: transform 0.3s ease;
+    }
+    .hire-btn:hover {
+      transform: scale(1.07);
+    }
+    .hire-btn::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 3s infinite;
+    }
+    @keyframes shimmer {
+      0% { left: -100%; }
+      50% { left: 100%; }
+      100% { left: 100%; }
+    }
+
+    .shimmer-text {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Popup Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #hirePopup a:hover {
+      transform: scale(1.05);
+      background: #1a1a1a;
+    }
+  </style>
+
+  <script>
+    function toggleHirePopup() {
+      const popup = document.getElementById("hirePopup");
+      popup.style.display = (popup.style.display === "flex") ? "none" : "flex";
+    }
+
+    // Auto-close popup when clicking outside
+    window.addEventListener("click", function(event) {
+      const popup = document.getElementById("hirePopup");
+      const modal = document.querySelector(".hire-modal");
+      if (popup.style.display === "flex" && !modal.contains(event.target) && event.target !== modal) {
+        popup.style.display = "none";
+      }
+    });
+  </script>
 </section>
 
 
-
-  <!-- Dropdown Menu -->
-  <div id="hireMenu" 
-       style="display: none; margin-top: 12px; background: #111; border-radius: 8px; 
-              box-shadow: 0 4px 12px rgba(0,0,0,0.6); padding: 15px; text-align: left;">
-    
-    <p style="margin: 0 0 10px; color: #aaa; font-size: 0.9rem;">Contact me via:</p>
-    
-      <a href="https://t.me/bigblack601" target="_blank" 
-       style="display: block; color: #0088cc; text-decoration: none; margin: 6px 0; font-size: 1rem;">
-       📩 Telegram DM
-    </a>
-    
-    <a href="https://x.com/bigblack60q" target="_blank" 
-       style="display: block; color: #1DA1F2; text-decoration: none; margin: 6px 0; font-size: 1rem;">
-       🐦 X (Twitter) DM
-    </a>
-    
-     <a href="https://discord.com/users/1401653205464645729" target="_blank" 
-       style="display: block; color: #5865F2; text-decoration: none; margin: 6px 0; font-size: 1rem;">
-       🎮 Discord DM
-    </a>
-  </div>
-</div>
-
-<script>
-function toggleHireMenu() {
-  const menu = document.getElementById("hireMenu");
-  menu.style.display = (menu.style.display === "block") ? "none" : "block";
-}
-</script>
-</div>
 
 
 <!-- ✉ CONTACT INFORMATION -->
@@ -470,30 +531,79 @@ function toggleHireMenu() {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   
+
 <!-- Proof of Work Section -->
-<section id="proof-of-work" style="padding: 70px 20px; background: #000; text-align: center;">
-  <div style="max-width: 700px; margin: 0 auto; background: #111; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.6);">
+<section id="proof-of-work" style="padding: 90px 20px; background: linear-gradient(180deg, #050008 0%, #0a0014 100%); text-align: center; position: relative;">
+  
+  <div class="pow-card" style="max-width: 850px; margin: 0 auto; background: rgba(17, 17, 17, 0.95); padding: 45px 35px; border-radius: 14px; 
+              box-shadow: 0 0 25px rgba(120, 60, 255, 0.25), inset 0 0 20px rgba(90, 0, 255, 0.1); 
+              border: 1px solid rgba(150, 90, 255, 0.3); position: relative; overflow: hidden;
+              opacity: 0; transform: translateY(40px); transition: all 1s ease;">
     
-    <h2 style="font-size: 2.2rem; margin-bottom: 20px; color: #fff;">𝐌𝐲 𝐏𝐎𝐖💼</h2>
-    
-    <p style="font-size: 1.1rem; color: #ddd; line-height: 1.6; margin-bottom: 25px;">
-      Welcome to my <strong>Proof of Work channel</strong>, a space where I share my projects, progress and updates on how I build communities and grow foundations. This is where I show real execution, results and how I work with communities.
-    </p>
+    <!-- Animated Glow Border -->
+    <div style="position:absolute; inset:0; border-radius:14px; pointer-events:none;
+                background: linear-gradient(90deg, rgba(108,99,255,0.3), rgba(0,255,180,0.2), rgba(108,99,255,0.3));
+                background-size:200% 200%; animation: powGlow 6s linear infinite; z-index:0;"></div>
 
-    <!-- Button -->
-    <a href="https://t.me/bigblackPOW" target="_blank" 
-       style="display: inline-flex; align-items: center; gap: 12px; background: #0088cc; 
-              color: #fff; padding: 14px 24px; border-radius: 10px; text-decoration: none; 
-              font-weight: bold; font-size: 1.05rem; transition: 0.3s ease;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" 
-           alt="Telegram" style="width: 24px; height: 24px;">
-      𝐉𝐎𝐈𝐍 𝐌𝐘 𝐏𝐎𝐖 𝐂𝐇𝐀𝐍𝐍𝐄𝐋
-    </a>
-    </p>
+    <div style="position:relative; z-index:2;">
+      <h2 style="font-size:2.4rem; color:#c59aff; letter-spacing:0.8px; margin-bottom:18px;">
+        💼 𝐌𝐘 𝐏𝐑𝐎𝐎𝐅 𝐎𝐅 𝐖𝐎𝐑𝐊
+      </h2>
+
+      <p style="font-size:1.15rem; color:#ddd; line-height:1.8; margin-bottom:30px;">
+        Welcome to my <strong style="color:#fff;">Proof of Work channel</strong> a transparent space where I share my 
+        <strong style="color:#a372ff;">projects, updates, and execution logs</strong>.  
+        Here, you’ll see real community building, on-chain effort and results driven growth.  
+      </p>
+
+      <!-- Button -->
+      <a href="https://t.me/bigblackPOW" target="_blank"
+         style="display:inline-flex; align-items:center; gap:10px; background:linear-gradient(90deg,#6c63ff,#9a80ff,#6c63ff);
+                color:#fff; padding:14px 28px; border-radius:10px; text-decoration:none; font-weight:bold; font-size:1.05rem;
+                letter-spacing:0.5px; transition:0.3s ease; box-shadow:0 0 14px rgba(108,99,255,0.4);
+                animation: buttonGlow 2.5s ease-in-out infinite alternate;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" 
+             alt="Telegram" style="width:24px; height:24px;">
+        𝐉𝐎𝐈𝐍 𝐌𝐘 𝐏𝐎𝐖 𝐂𝐇𝐀𝐍𝐍𝐄𝐋
+      </a>
+    </div>
   </div>
+
+  <style>
+    @keyframes powGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Button breathing glow */
+    @keyframes buttonGlow {
+      0% { box-shadow: 0 0 14px rgba(108,99,255,0.4), 0 0 0 rgba(108,99,255,0.1); }
+      100% { box-shadow: 0 0 24px rgba(108,99,255,0.8), 0 0 20px rgba(108,99,255,0.4); }
+    }
+
+    #proof-of-work a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 26px rgba(150, 90, 255, 0.8);
+    }
+
+    #proof-of-work p strong {
+      color: #b892ff;
+    }
+  </style>
+
+  <script>
+    // Reveal Animation on Scroll
+    const powCard = document.querySelector('.pow-card');
+    window.addEventListener('scroll', () => {
+      const rect = powCard.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        powCard.style.opacity = '1';
+        powCard.style.transform = 'translateY(0)';
+      }
+    });
+  </script>
 </section>
-
-
 
 
   <!-- 🪙 COIN SECTION -->
@@ -525,12 +635,15 @@ function toggleHireMenu() {
       <li>1 H <span>8% 🅑 0 Ⓢ 0</span></li>
       <li>ATH <span>$51.4 K (−3% / 1 D)</span></li>
     </ul>
-  </div>
-
+    
   <div class="section">
     <h3>🔗 Socials</h3>
-    <p>𝕏 [♽] • TG • Web • </p>
-  </div>
+  <p style="text-align:center; font-family:monospace; background:#111; color:#0ff; padding:10px; border-radius:8px;">
+  <a href="https://x.com/yourhandle" target="_blank" style="color:#0ff; text-decoration:none; margin:0 10px;">𝕏 [♽]</a> • 
+  <a href="https://t.me/bigblackPOW" target="_blank" style="color:#0ff; text-decoration:none; margin:0 10px;">TG</a> • 
+  <a href="https://bigblack60.github.io/portfolio.com/" target="_blank" style="color:#0ff; text-decoration:none; margin:0 10px;">Web</a>
+</p>
+
 
   <div class="section">
     <h3>🔒 Security</h3>
@@ -558,7 +671,7 @@ function toggleHireMenu() {
       <strong>BIG BLACK ($BVK)</strong> is a Proof-of-Work inspired memecoin
       that was built on <span>Solana blockchain</span> through LaunchLab.
       Designed for experimentation and community engagement,
-      <strong>BVK</strong> represents transparency, energy, and the playful
+      <strong>$BVK</strong> represents transparency, energy, and the playful
       spirit of decentralized culture fusing innovation with on-chain fun
     </p>
   </div>
@@ -723,29 +836,6 @@ document.addEventListener("DOMContentLoaded", () => {
 </section>
   
   
-<!-- Employments & Projects -->
-<section id="employments" style="padding: 70px 20px; background: #000; text-align: center;">
-  <h2 style="font-size: 2.2rem; margin-bottom: 30px; color: #fff">𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬 & 𝐄𝐦𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭𝐬</h2>
-  
-  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto;">
-
-
-    <!-- PKGG -->
-    <div style="background: #111; padding: 25px; border-radius: 14px; text-align: left; 
-                box-shadow: 0 6px 18px rgba(0,0,0,0.7); border: 1px solid #222;">
-      <h3 style="color: #fff;">PKGG Poker Community </h3>
-      <ul style="color: #bbb; padding-left: 18px; line-height: 1.6;">
-        <li>Role: Community Mod</li>
-        <li>Moderation & community safety</li>
-        <li>Announcements & updates</li>
-        <li>Community building</li>
-      </ul>
-      <a href="https://discord.gg/WcUz7zgNbv" target="_blank" 
-         style="display: inline-block; background: #5865F2; color: #fff; padding: 10px 20px; 
-                border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.95rem;">
-        Join Server
-      </a>
-    </div>
 
 <!-- ================== PROJECTS & EMPLOYMENT ================== -->
 <section id="experience" style="scroll-margin-top: 100px; padding: 70px 20px; background: #000; text-align: center;">
@@ -1132,66 +1222,179 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
   
-<!-- Tools -->
-<section style="padding: 70px 20px; background: #000; text-align: center;">
-  <h2 style="font-size: 2.2rem; margin-bottom: 30px; color: #fff;">𝐓𝐨𝐨𝐥𝐬 & 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦𝐬⚙️</h2>
-  
-  <div style="background: #111; padding: 30px; border-radius: 12px; max-width: 900px; margin: 0 auto 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.6); text-align: left;">
-    <ul style="color: #ddd; font-size: 1.05rem; line-height: 1.7; list-style-type: none; padding-left: 0;">
-      <li>🪙 Memecoin: Pumpfun, DEX Tools & Screener, Prelaunch, CoinGecko</li>
-      
-      <li>🎨 NFT: NFT-Drop, NFTCalendar, UpcomingNFT, Subber, LaunchMyNFT</li>
-      
-      <li>📱 Apps: Twitter, Telegram, Discord, Twitch</li>
-    </ul>
+
+ <!-- Tools & Platforms -->
+<section id="tools" style="padding: 80px 20px; background: #000; text-align: center;">
+  <h2 style="font-size: 2.2rem; margin-bottom: 40px; color: #fff;">⚙ 𝐓𝐨𝐨𝐥𝐬 & 𝐏𝐥𝐚𝐭𝐟𝐨𝐫𝐦𝐬</h2>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px;">
+
+    <!-- Memecoin Tools -->
+    <div style="background: linear-gradient(145deg, #111, #1b0033); color: #fff; border: 1px solid #3d007a;
+                border-radius: 12px; width: 260px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.7); text-align: left;">
+      <h3 style="color: #b266ff; font-size: 1.3rem; margin-bottom: 10px;">🪙 Memecoin</h3>
+      <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">
+        Tools like PumpFun, DEXTools, Prelaunch, and CoinGecko for market tracking and token visibility.
+      </p>
+    </div>
+
+    <!-- NFT Tools -->
+    <div style="background: linear-gradient(145deg, #111, #1b0033); color: #fff; border: 1px solid #3d007a;
+                border-radius: 12px; width: 260px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.7); text-align: left;">
+      <h3 style="color: #b266ff; font-size: 1.3rem; margin-bottom: 10px;">🎨 NFT</h3>
+      <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">
+        Platforms like NFTCalendar, LaunchMyNFT, and Subber for mint tracking and creative launches.
+      </p>
+    </div>
+
+    <!-- App Tools -->
+    <div style="background: linear-gradient(145deg, #111, #1b0033); color: #fff; border: 1px solid #3d007a;
+                border-radius: 12px; width: 260px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.7); text-align: left;">
+      <h3 style="color: #b266ff; font-size: 1.3rem; margin-bottom: 10px;">📱 Apps</h3>
+      <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">
+        Core communication on Twitter, Telegram, Discord, and Twitch for team sync and community updates.
+      </p>
+    </div>
+
   </div>
 </section>
 
+
+
+    
 <!-- Knowledge Base -->
-<section style="padding: 70px 20px; background: #000; text-align: center;">
-  <h2 style="font-size: 2.2rem; margin-bottom: 30px; color: #fff;">𝐖𝐞𝐛3 𝐊𝐧𝐨𝐰𝐥𝐞𝐝𝐠𝐞 𝐁𝐚𝐬𝐞📚</h2>
-  
-  <div style="background: #111; padding: 30px; border-radius: 12px; max-width: 900px; margin: 0 auto; box-shadow: 0 4px 12px rgba(0,0,0,0.6); text-align: left;">
-    <ul style="color: #ddd; font-size: 1.05rem; line-height: 1.7; list-style-type: none; padding-left: 0;">
-      <li>🌐 Blockchains: Ethereum, Solana, Base, Sui, Ape, Polygon, Litecoin & more</p>
-      
-      <li>🚀 Memecoin: Launch hype, Token mechanics, Presale boosting, Price tracking</p>
-      
-      <li>🎭 NFT Lifecycle: Pre-mint planning, Mint day support, Post-launch growth, AMAs</li>
-      
-      <li>🏛 DAO Ops: Governance flow, Community proposals, Participation building</li>
-    </ul>
+<section id="knowledge" style="padding: 80px 20px; background: #000; text-align: center;">
+  <h2 style="font-size: 2.2rem; margin-bottom: 40px; color: #fff;">📚 𝐖𝐞𝐛3 𝐊𝐧𝐨𝐰𝐥𝐞𝐝𝐠𝐞 𝐁𝐚𝐬𝐞</h2>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 25px;">
+
+    <!-- Blockchains -->
+    <div style="background: linear-gradient(145deg, #111, #1b0033); color: #fff; border: 1px solid #3d007a;
+                border-radius: 12px; width: 260px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.7); text-align: left;">
+      <h3 style="color: #b266ff; font-size: 1.3rem; margin-bottom: 10px;">🌐 Blockchains</h3>
+      <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">
+        Deep knowledge across Ethereum, Solana, Base, Sui, and Polygon ecosystems.
+      </p>
+    </div>
+
+    <!-- Memecoin Strategy -->
+    <div style="background: linear-gradient(145deg, #111, #1b0033); color: #fff; border: 1px solid #3d007a;
+                border-radius: 12px; width: 260px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.7); text-align: left;">
+      <h3 style="color: #b266ff; font-size: 1.3rem; margin-bottom: 10px;">🚀 Memecoin</h3>
+      <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">
+        Expertise in launch hype, presale boosts, and token mechanics for viral growth.
+      </p>
+    </div>
+
+    <!-- NFT Lifecycle -->
+    <div style="background: linear-gradient(145deg, #111, #1b0033); color: #fff; border: 1px solid #3d007a;
+                border-radius: 12px; width: 260px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.7); text-align: left;">
+      <h3 style="color: #b266ff; font-size: 1.3rem; margin-bottom: 10px;">🎭 NFT Lifecycle</h3>
+      <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">
+        Full-cycle management — from pre-mint strategy to post-launch growth and AMAs.
+      </p>
+    </div>
+
+    <!-- DAO -->
+    <div style="background: linear-gradient(145deg, #111, #1b0033); color: #fff; border: 1px solid #3d007a;
+                border-radius: 12px; width: 260px; padding: 25px; box-shadow: 0 8px 20px rgba(0,0,0,0.7); text-align: left;">
+      <h3 style="color: #b266ff; font-size: 1.3rem; margin-bottom: 10px;">🏛 DAO Ops</h3>
+      <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">
+        Skilled in DAO governance, proposal creation, and community participation flows.
+      </p>
+    </div>
+
   </div>
 </section>
- 
 
+
+    
 <!-- Note to Devs -->
-<section id="note" style="padding: 70px 20px; background: #000; text-align: center;">
-  <h2 style="font-size: 2.2rem; margin-bottom: 30px; color: #fff;">𝐍𝐨𝐭𝐞 𝐭𝐨 𝐃𝐞𝐯𝐬 & 𝐅𝐨𝐮𝐧𝐝𝐞𝐫𝐬</h2>
-  
-  <div style="background: #111; padding: 30px; border-radius: 12px; max-width: 900px; margin: 0 auto 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.6); text-align: left;">
-    <p style="color: #ddd; font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px;">
-      If you're a Project <strong>Dev</strong> or <strong>Founder</strong> and you are currently reviewing my 
-      <strong>Proof of Work</strong>, please have this in mind, that i don't offer free work.
+<section id="note" style="padding: 80px 20px; background: #000; text-align: center;">
+  <h2 style="font-size: 2.2rem; margin-bottom: 40px; color: #fff;">💼 𝐍𝐨𝐭𝐞 𝐭𝐨 𝐃𝐞𝐯𝐬 & 𝐅𝐨𝐮𝐧𝐝𝐞𝐫𝐬</h2>
+
+  <div style="background: linear-gradient(145deg, #111, #1b0033); padding: 40px; border-radius: 14px; 
+              max-width: 900px; margin: 0 auto; border: 1px solid #3d007a;
+              box-shadow: 0 8px 20px rgba(0,0,0,0.7); text-align: left;">
+    
+    <p style="color: #ddd; font-size: 1.08rem; line-height: 1.8; margin-bottom: 25px;">
+      👋 Hello <strong>Developers</strong> & <strong>Founders</strong> — if you’re reviewing my <strong>Proof of Work</strong>,
+      please understand that I don’t provide free work or unpaid tasks.  
+      Every project contribution shown here represents real <strong>value, time, and skill</strong>.
     </p>
 
-    <ul style="color: #ddd; font-size: 1.05rem; line-height: 1.7; list-style-type: none; padding-left: 0;">
-      <li>⚡ <strong>WHY I don't offer free work?</strong> every contribution you see here is backed up by real value, strategies, my time, effort and skill.</li>
-      <li>💡 I respect our craft and expect the same professionalism in return.</li>
-      <li>🧠 Great work deserves great compensation.</li>
-      <li>📌 Available only for serious collaborations.</li>
-    </ul>
+    <div style="display: flex; flex-direction: column; gap: 14px;">
+
+      <div style="background: #0c0018; padding: 18px 22px; border-radius: 10px; border: 1px solid #3d007a;
+                  box-shadow: inset 0 0 10px rgba(107,0,255,0.2);">
+        <p style="color: #ccc; font-size: 1rem; line-height: 1.6; margin: 0;">
+          ⚡ <strong>Why I don’t offer free work:</strong> Every contribution here is backed by effort, strategy, and real market insight.
+        </p>
+      </div>
+
+      <div style="background: #0c0018; padding: 18px 22px; border-radius: 10px; border: 1px solid #3d007a;
+                  box-shadow: inset 0 0 10px rgba(107,0,255,0.2);">
+        <p style="color: #ccc; font-size: 1rem; line-height: 1.6; margin: 0;">
+          💡 <strong>Professionalism matters:</strong> I respect our craft and expect the same commitment in collaborations.
+        </p>
+      </div>
+
+      <div style="background: #0c0018; padding: 18px 22px; border-radius: 10px; border: 1px solid #3d007a;
+                  box-shadow: inset 0 0 10px rgba(107,0,255,0.2);">
+        <p style="color: #ccc; font-size: 1rem; line-height: 1.6; margin: 0;">
+          🧠 <strong>Value exchange:</strong> Great work deserves great compensation — quality input always earns quality output.
+        </p>
+      </div>
+
+      <div style="background: #0c0018; padding: 18px 22px; border-radius: 10px; border: 1px solid #3d007a;
+                  box-shadow: inset 0 0 10px rgba(107,0,255,0.2);">
+        <p style="color: #ccc; font-size: 1rem; line-height: 1.6; margin: 0;">
+          📌 <strong>Availability:</strong> Open only for serious projects and teams who value mutual respect and reward.
+        </p>
+      </div>
+
+    </div>
   </div>
 </section>
-
+    
 <!-- Footer -->
-<footer style="background: #111; padding: 25px; text-align: center; border-top: 1px solid #222;">
-  <p style="color: #888; font-size: 0.95rem; margin: 0;">
-    &copy; 2025 : Website built with 💻 by <strong style="color: #0088cc;">BIG BLACK</strong>
+<footer style="background: linear-gradient(145deg, #0a0014, #120022); padding: 40px 20px; text-align: center; 
+               border-top: 1px solid rgba(140, 80, 255, 0.3); box-shadow: 0 -4px 20px rgba(80,0,150,0.4);">
+  
+  <h3 style="color: #b892ff; font-size: 1.3rem; letter-spacing: 1px; margin-bottom: 10px;">
+    𝐁𝐈𝐆 𝐁𝐋𝐀𝐂𝐊
+  </h3>
+  
+  <p style="color: #ccc; font-size: 0.95rem; margin: 5px 0;">
+    &copy; 2025 — Designed & Built with passion for the Web3 space.
   </p>
-  <p style="color: #555; font-size: 0.85rem; margin-top: 8px;">
-    ⚡ Powered by Web3 • Open to collaborations • Let’s build together
+  
+  <p style="color: #9a6cff; font-size: 0.9rem; margin: 8px 0 0;">
+    ⚡ Powered by <strong style="color: #fff;">Web3</strong> • Open to <strong>collaborations</strong> • Let’s <strong>build together</strong>.
   </p>
+
+  <div style="margin-top: 20px; display: flex; justify-content: center; gap: 18px;">
+    <a href="https://x.com/bigblack60q" target="_blank" style="color: #b892ff; font-size: 1.3rem; text-decoration: none; transition: 0.3s;">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+    <a href="https://t.me/bigblack601" target="_blank" style="color: #b892ff; font-size: 1.3rem; text-decoration: none; transition: 0.3s;">
+      <i class="fab fa-telegram"></i>
+    </a>
+    <a href="https://discord.com/users/1401653205464645729" target="_blank" style="color: #b892ff; font-size: 1.3rem; text-decoration: none; transition: 0.3s;">
+      <i class="fab fa-discord"></i>
+    </a>
+    <a href="mailto:bigblack60q@gmail.com" style="color: #b892ff; font-size: 1.3rem; text-decoration: none; transition: 0.3s;">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+
+  <style>
+    footer a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 8px #b892ff;
+      transform: scale(1.1);
+    }
+  </style>
 </footer>
 
 
