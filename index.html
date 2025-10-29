@@ -345,55 +345,131 @@ function toggleHireMenu() {
 </script>
 </div>
 
-<!-- Contact Info -->
-<section id="contact" style="padding: 70px 20px; background: #000; text-align: center;">
-  <h2 style="font-size: 2.2rem; margin-bottom: 30px; color: #fff;">𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧</h2>
-  
-  <div style="background: #111; padding: 30px; border-radius: 14px; max-width: 800px; margin: 0 auto; 
-              box-shadow: 0 6px 18px rgba(0,0,0,0.7); text-align: left; border: 1px solid #222;">
-    <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.05rem; line-height: 1.8;">
-    
-  <div class="card" style="display: flex; justify-content: center; gap: 25px; flex-wrap: wrap;">
-<!-- Twitter -->
-    <a href="https://x.com/bigblack60q" target="_blank" 
-       style="display: flex; align-items: center; gap: 8px; text-decoration: none; 
-              color: #1DA1F2; font-weight: bold; font-size: 1rem;">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/x.svg" 
-           alt="Twitter" style="width: 22px; height: 22px; filter: invert(100%);">
-      @bigblack60q
-    </a>
 
-    <!-- Discord -->
-    <a href="https://discord.com/users/1401653205464645729" target="_blank" 
-       style="display: flex; align-items: center; gap: 8px; text-decoration: none; 
-              color: #5865F2; font-weight: bold; font-size: 1rem;">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/discord.svg" 
-           alt="Discord" style="width: 22px; height: 22px;">
-      @bigblack601
-    </a>
+<!-- ✉ CONTACT INFORMATION -->
+<section id="contact" class="contact-section">
+  <h2>𝐂𝐨𝐧𝐭𝐚𝐜𝐭 𝐈𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧</h2>
 
-    <!-- Telegram -->
-    <a href="https://t.me/bigblack601" target="_blank" 
-       style="display: flex; align-items: center; gap: 8px; text-decoration: none; 
-              color: #0088cc; font-weight: bold; font-size: 1rem;">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" 
-           alt="Telegram" style="width: 22px; height: 22px;">
-      @bigblack601
-    </a>
+  <div class="contact-box">
+    <div class="contact-grid">
+      
+      <!-- Twitter -->
+      <a href="https://x.com/bigblack60q" target="_blank" class="contact-card twitter">
+        <i class="fab fa-x-twitter"></i>
+        <span>@bigblack60q</span>
+      </a>
 
-    <!-- Email -->
-    <a href="mailto:bigblack60q@gmail.com" 
-       style="display: flex; align-items: center; gap: 8px; text-decoration: none; 
-              color: #ff4a4a; font-weight: bold; font-size: 1rem;">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gmail.svg" 
-           alt="Email" style="width: 22px; height: 22px;">
-      bigblack60q@gmail.com
-    </a> 
-    </ul>
+      <!-- Discord -->
+      <a href="https://discord.com/users/1401653205464645729" target="_blank" class="contact-card discord">
+        <i class="fab fa-discord"></i>
+        <span>@bigblack601</span>
+      </a>
+
+      <!-- Telegram -->
+      <a href="https://t.me/bigblack601" target="_blank" class="contact-card telegram">
+        <i class="fab fa-telegram"></i>
+        <span>@bigblack601</span>
+      </a>
+
+      <!-- Email -->
+      <a href="mailto:bigblack60q@gmail.com" class="contact-card email">
+        <i class="fas fa-envelope"></i>
+        <span>bigblack60q@gmail.com</span>
+      </a>
+
+    </div>
   </div>
 </section>
 
+<!-- STYLES -->
+<style>
+.contact-section {
+  background: #000;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+}
 
+.contact-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #c9a4ff;
+  letter-spacing: 1px;
+}
+
+.contact-box {
+  background: #0b0b0f;
+  border: 1px solid #2a2a35;
+  border-radius: 14px;
+  padding: 40px 25px;
+  max-width: 850px;
+  margin: 0 auto;
+  box-shadow: 0 0 20px rgba(108, 99, 255, 0.3);
+  transition: 0.3s ease;
+}
+
+.contact-box:hover {
+  box-shadow: 0 0 26px rgba(140, 70, 255, 0.4);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  justify-content: center;
+}
+
+.contact-card {
+  background: #111;
+  border: 1px solid #2d2d3d;
+  border-radius: 12px;
+  padding: 20px 15px;
+  color: #e0e0ff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-shadow: 0 0 14px rgba(100, 50, 200, 0.1);
+}
+
+.contact-card i {
+  font-size: 1.4rem;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(184, 146, 255, 0.4);
+  border-color: #b892ff;
+  color: #b892ff;
+}
+
+/* Specific color accents */
+.contact-card.twitter i { color: #1DA1F2; }
+.contact-card.discord i { color: #5865F2; }
+.contact-card.telegram i { color: #0088cc; }
+.contact-card.email i { color: #ff4a4a; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact-card {
+    font-size: 0.95rem;
+    padding: 16px;
+  }
+  .contact-section h2 {
+    font-size: 1.8rem;
+  }
+}
+</style>
+
+<!-- Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  
 <!-- Proof of Work Section -->
 <section id="proof-of-work" style="padding: 70px 20px; background: #000; text-align: center;">
   <div style="max-width: 700px; margin: 0 auto; background: #111; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.6);">
@@ -422,72 +498,254 @@ function toggleHireMenu() {
 
   <!-- 🪙 COIN SECTION -->
 <section id="coin" style="scroll-margin-top: 100px;">
-  <!-- BIG BLACK ($BVK) - LaunchLab Style with Live Pulse -->
-  <div class="coin-box">
-    <div class="coin-header">
-      <span class="coin-icon">🟣</span>
-      <h2>BIG BLACK <span class="symbol">($BVK)</span></h2>
-    </div>
-    <div class="coin-sub">
-      <code>67wpGeqEVDUNQyHJ5na8f1uKdg3ZcxkPTA6N4ugwdray</code><br>
-      <span class="network">#SOL (LaunchLab)</span> |
-      <span class="status">
-        <span class="live-dot"></span> Live • 1 Week Old
-      </span>
-    </div>
-
-    <hr>
-
-    <div class="section">
-      <h3>📊 Stats</h3>
-      <ul>
-        <li>USD <span>$0.0₅5198 (0%)</span></li>
-        <li>MC <span>$51.2 K</span></li>
-        <li>Vol <span>$78.6 K</span></li>
-        <li>LP <span>&lt;$21 K ⚠</span></li>
-        <li>Sup <span>1 B / 1 B</span></li>
-        <li>1 H <span>8% 🅑 0 Ⓢ 0</span></li>
-        <li>ATH <span>$51.4 K (−3% / 1 D)</span></li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h3>🔗 Socials</h3>
-      <p>𝕏 [♽] • TG • Web • </p>
-    </div>
-
-    <div class="section">
-      <h3>🔒 Security</h3>
-      <ul>
-        <li>Top 10 <span>13% | 8 (total)</span></li>
-        <li>TH <span>0.0 | 0.0 | 0.0</span></li>
-        <li>Dev Toks <span>1 / 0 (0%) [info]</span></li>
-        <li>Dev Sold <span>🟢 🅳</span></li>
-        <li>DEX Paid <span>🟢 [info] • [lens]</span></li>
-      </ul>
-    </div>
-
-    <div class="section footer">
-      <p class="tags">DEF • DS • GT • MOB • EXP • 𝕏s</p>
-      <p class="integrations">GM • AXI • TRO • PHO • NEO • BLO • MAE • PDR • OKX • MVX • BNK • PEP</p>
-      <p class="try">⬜ TRY: <strong>BONKbot Telemetry!</strong></p>
-    </div>
+<!-- BIG BLACK ($BVK) - LaunchLab Style with Live Pulse -->
+<div class="coin-box">
+  <div class="coin-header">
+    <span class="coin-icon">🟣</span>
+    <h2>BIG BLACK <span class="symbol">($BVK)</span></h2>
+  </div>
+  <div class="coin-sub">
+    <code>67wpGeqEVDUNQyHJ5na8f1uKdg3ZcxkPTA6N4ugwdray</code><br>
+    <span class="network">#SOL (LaunchLab)</span> |
+    <span class="status">
+      <span class="live-dot"></span> Live • 1 Week Old
+    </span>
   </div>
 
-  <!-- 🪙 Overview Section (with Fade-In + Glow Edge) -->
-  <section id="overview" class="hidden">
-    <h2>Overview</h2>
-    <div class="overview-card">
-      <p>
-        <strong>BIG BLACK ($BVK)</strong> is a Proof-of-Work-inspired memecoin
-        built on <span>Solana blockchain</span> through LaunchLab.
-        Designed for experimentation and community engagement,
-        <strong>BVK</strong> represents transparency, energy, and the playful
-        spirit of decentralized culture — fusing innovation with on-chain fun.
-      </p>
-    </div>
-  </section>
+  <hr>
+
+  <div class="section">
+    <h3>📊 Stats</h3>
+    <ul>
+      <li>USD <span>$0.0₅5198 (0%)</span></li>
+      <li>MC <span>$51.2 K</span></li>
+      <li>Vol <span>$78.6 K</span></li>
+      <li>LP <span>&lt;$21 K ⚠</span></li>
+      <li>Sup <span>1 B / 1 B</span></li>
+      <li>1 H <span>8% 🅑 0 Ⓢ 0</span></li>
+      <li>ATH <span>$51.4 K (−3% / 1 D)</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h3>🔗 Socials</h3>
+    <p>𝕏 [♽] • TG • Web • </p>
+  </div>
+
+  <div class="section">
+    <h3>🔒 Security</h3>
+    <ul>
+      <li>Top 10 <span>13% | 8 (total)</span></li>
+      <li>TH <span>6.0 | 10.2 | 0.0</span></li>
+      <li>Dev Toks <span>1 / 0 (0%) [info]</span></li>
+      <li>Dev Sold <span>🟢 🅳</span></li>
+      <li>DEX Paid <span>🟢 [info] • [lens]</span></li>
+    </ul>
+  </div>
+
+  <div class="section footer">
+    <p class="tags">DEF • DS • GT • MOB • EXP • 𝕏s</p>
+    <p class="integrations">GM • AXI • TRO • PHO • NEO • BLO • MAE • PDR • OKX • MVX • BNK • PEP</p>
+    <p class="try">⬜ TRY: <strong>BONKbot Telemetry!</strong></p>
+  </div>
+</div>
+
+<!-- 🪙 Overview Section (with Fade-In + Glow Edge) -->
+<section id="overview" class="hidden">
+  <h2>Overview</h2>
+  <div class="overview-card">
+    <p>
+      <strong>BIG BLACK ($BVK)</strong> is a Proof-of-Work inspired memecoin
+      that was built on <span>Solana blockchain</span> through LaunchLab.
+      Designed for experimentation and community engagement,
+      <strong>BVK</strong> represents transparency, energy, and the playful
+      spirit of decentralized culture fusing innovation with on-chain fun
+    </p>
+  </div>
 </section>
+
+<style>
+/* ================== COIN BOX ================== */
+.coin-box {
+  background:#0b0b0f;
+  border:1px solid #2a2a35;
+  border-radius:12px;
+  padding:20px 24px;
+  color:#e0e0ff;
+  font-family:"Inter",sans-serif;
+  max-width:480px;
+  margin:20px auto;
+  box-shadow:0 0 18px rgba(120,60,255,0.15);
+  transition:0.3s ease;
+}
+.coin-box:hover {
+  box-shadow:0 0 24px rgba(140,70,255,0.35);
+  transform:translateY(-3px);
+}
+.coin-header {
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.coin-header h2 {
+  margin:0;
+  color:#c49aff;
+  font-size:1.3rem;
+}
+.symbol { color:#00ffb0; font-weight:500; }
+.coin-sub {
+  font-size:0.9rem;
+  color:#9fa2b5;
+  margin-top:4px;
+}
+.network { color:#8aefff; }
+.status { color:#52ff9f; }
+.live-dot {
+  display:inline-block;
+  width:8px;
+  height:8px;
+  background:#52ff9f;
+  border-radius:50%;
+  margin-right:6px;
+  box-shadow:0 0 6px #52ff9f;
+  animation:pulse 2s infinite;
+  vertical-align:middle;
+}
+@keyframes pulse {
+  0% { transform:scale(1); opacity:1; }
+  50% { transform:scale(1.5); opacity:0.4; }
+  100% { transform:scale(1); opacity:1; }
+}
+.section { margin-top:14px; }
+.section h3 {
+  font-size:1rem;
+  color:#b892ff;
+  margin-bottom:6px;
+}
+ul {
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+ul li {
+  display:flex;
+  justify-content:space-between;
+  padding:3px 0;
+  border-bottom:1px solid rgba(255,255,255,0.05);
+}
+ul li span { color:#aaffcc; }
+.footer {
+  margin-top:16px;
+  border-top:1px solid rgba(255,255,255,0.08);
+  padding-top:8px;
+  font-size:0.85rem;
+  text-align:center;
+}
+.tags,.integrations { color:#a0a0c0; margin:4px 0; }
+.try strong { color:#b992ff; }
+
+/* ================== OVERVIEW SECTION ================== */
+#overview {
+  background:#000;
+  padding:50px 20px 70px;
+  max-width:850px;
+  margin:40px auto;
+  text-align:center;
+  color:#fff;
+  transition:opacity 1s ease, transform 1s ease;
+}
+#overview h2 {
+  font-size:2rem;
+  margin-bottom:25px;
+  color:#c9a4ff;
+  letter-spacing:0.5px;
+}
+.overview-card {
+  background:#111;
+  padding:35px 25px;
+  border-radius:14px;
+  box-shadow:0 0 20px rgba(108,99,255,0.3);
+  border:1px solid #2a2a35;
+  max-width:850px;
+  margin:0 auto;
+  text-align:left;
+  line-height:1.8;
+  color:#ccc;
+  border-left:4px solid #6c63ff;
+  position:relative;
+}
+.overview-card::before {
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:14px;
+  padding:2px;
+  background:linear-gradient(90deg,#6c63ff,#00c6ff,#6c63ff);
+  background-size:200% 200%;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+          mask-composite:exclude;
+  animation:glowEdge 6s linear infinite;
+}
+@keyframes glowEdge {
+  0% { background-position:0% 50%; }
+  50% { background-position:100% 50%; }
+  100% { background-position:0% 50%; }
+}
+.overview-card strong { color:#fff; }
+.overview-card span { color:#6c63ff; font-weight:600; }
+
+/* ✨ Scroll Animation */
+.hidden { opacity:0; transform:translateY(40px); }
+.visible { opacity:1; transform:translateY(0); }
+
+/* Responsive */
+@media (max-width:768px) {
+  #overview { padding:40px 20px; }
+  .overview-card { padding:28px 20px; font-size:0.95rem; }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const overview = document.querySelector("#overview");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        overview.classList.add("visible");
+        observer.unobserve(overview);
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(overview);
+});
+</script>
+</section>
+  
+  
+<!-- Employments & Projects -->
+<section id="employments" style="padding: 70px 20px; background: #000; text-align: center;">
+  <h2 style="font-size: 2.2rem; margin-bottom: 30px; color: #fff">𝐏𝐫𝐨𝐣𝐞𝐜𝐭𝐬 & 𝐄𝐦𝐩𝐥𝐨𝐲𝐦𝐞𝐧𝐭𝐬</h2>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1100px; margin: 0 auto;">
+
+
+    <!-- PKGG -->
+    <div style="background: #111; padding: 25px; border-radius: 14px; text-align: left; 
+                box-shadow: 0 6px 18px rgba(0,0,0,0.7); border: 1px solid #222;">
+      <h3 style="color: #fff;">PKGG Poker Community </h3>
+      <ul style="color: #bbb; padding-left: 18px; line-height: 1.6;">
+        <li>Role: Community Mod</li>
+        <li>Moderation & community safety</li>
+        <li>Announcements & updates</li>
+        <li>Community building</li>
+      </ul>
+      <a href="https://discord.gg/WcUz7zgNbv" target="_blank" 
+         style="display: inline-block; background: #5865F2; color: #fff; padding: 10px 20px; 
+                border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.95rem;">
+        Join Server
+      </a>
+    </div>
 
 <!-- ================== PROJECTS & EMPLOYMENT ================== -->
 <section id="experience" style="scroll-margin-top: 100px; padding: 70px 20px; background: #000; text-align: center;">
