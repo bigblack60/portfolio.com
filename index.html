@@ -179,14 +179,17 @@
   </nav>
 </header>
 
+<!-- Header Spacer (fixes overlap + adds design) -->
+<div style="height: 90px; background: linear-gradient(to bottom, #0b0b0f 60%, transparent 100%);"></div>
+
 <!-- Smooth Scroll + Animated Menu Script -->
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const toggle = document.querySelector(".menu-toggle");
   const menu = document.getElementById("menu");
 
-  // Force page to start from top on reload
-  window.scrollTo(0, 0);
+  // Always start from top when the site loads
+  window.scrollTo({ top: 0, behavior: "instant" });
 
   toggle.addEventListener("click", () => {
     const visible = menu.style.display === "block";
@@ -203,22 +206,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  // Smooth scroll to section
+  // Smooth scroll to section with header offset
   document.querySelectorAll('.menu-link').forEach(link => {
     link.addEventListener('click', function(e) {
       e.preventDefault();
       const targetId = this.getAttribute('href');
       const target = document.querySelector(targetId);
       if (target) {
-        // Close menu on click (mobile)
+        // Close menu on click (for mobile)
         menu.style.opacity = "0";
         menu.style.transform = "translateY(-10px)";
         setTimeout(() => menu.style.display = "none", 200);
-        // Smooth scroll
-        window.scrollTo({
-          top: target.offsetTop - 60, // adjust offset for header height
-          behavior: "smooth"
-        });
+        // Smooth scroll with header offset
+        const headerHeight = document.querySelector('header').offsetHeight;
+        const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 10;
+        window.scrollTo({ top: targetPosition, behavior: "smooth" });
       }
     });
   });
