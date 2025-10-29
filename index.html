@@ -158,19 +158,104 @@
     𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐁𝐢𝐠 𝐁𝐥𝐚𝐜𝐤 𝐏𝐨𝐫𝐭𝐟𝐨𝐥𝐢𝐨
   </div>
 
-  <!-- Header -->
-  <header>
-    <h1>𝐌𝐘 𝐏𝐎𝐑𝐓𝐅𝐎𝐋𝐈𝐎</h1>
-    <span class="menu-toggle">&#9776;</span>
-    <nav id="menu">
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+
+<!-- Include Font Awesome (for icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Header -->
+<header style="position: fixed; top: 0; left: 0; width: 100%; background: #0b0b0f; padding: 15px 25px; display: flex; align-items: center; justify-content: space-between; z-index: 999; border-bottom: 1px solid rgba(255,255,255,0.1);">
+  <h1 style="font-size: 1.3rem; color: #b892ff; letter-spacing: 1px;">𝐌𝐘 𝐏𝐎𝐑𝐓𝐅𝐎𝐋𝐈𝐎</h1>
+  <span class="menu-toggle" style="font-size: 1.8rem; cursor: pointer; color: #fff;"><i class="fas fa-bars"></i></span>
+
+  <nav id="menu" style="display: none; position: absolute; top: 60px; right: 25px; background: #111; border: 1px solid #333; border-radius: 10px; padding: 15px 25px; opacity: 0; transform: translateY(-10px); transition: all 0.3s ease;">
+    <ul style="list-style: none; margin: 0; padding: 0;">
+      <li style="margin: 10px 0;"><a href="#about" class="menu-link"><i class="fas fa-user"></i> About</a></li>
+      <li style="margin: 10px 0;"><a href="#experience" class="menu-link"><i class="fas fa-briefcase"></i> Experience</a></li>
+      <li style="margin: 10px 0;"><a href="#skills" class="menu-link"><i class="fas fa-gears"></i> Skills</a></li>
+      <li style="margin: 10px 0;"><a href="#coin" class="menu-link"><i class="fas fa-coins"></i> Coin</a></li>
+      <li style="margin: 10px 0;"><a href="#contact" class="menu-link"><i class="fas fa-envelope"></i> Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Smooth Scroll + Animated Menu Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.getElementById("menu");
+
+  toggle.addEventListener("click", () => {
+    const visible = menu.style.display === "block";
+    if (visible) {
+      menu.style.opacity = "0";
+      menu.style.transform = "translateY(-10px)";
+      setTimeout(() => menu.style.display = "none", 200);
+    } else {
+      menu.style.display = "block";
+      setTimeout(() => {
+        menu.style.opacity = "1";
+        menu.style.transform = "translateY(0)";
+      }, 10);
+    }
+  });
+
+  // Smooth scroll to section
+  document.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        menu.style.opacity = "0";
+        menu.style.transform = "translateY(-10px)";
+        setTimeout(() => menu.style.display = "none", 200);
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
+  });
+});
+</script>
+
+<style>
+.menu-link {
+  color: #e0e0ff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.menu-link:hover {
+  color: #8aefff;
+  text-shadow: 0 0 5px #8aefff;
+}
+#menu ul li i {
+  color: #b892ff;
+}
+@media (min-width: 768px) {
+  #menu {
+    display: block !important;
+    position: static;
+    background: none;
+    border: none;
+    padding: 0;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  #menu ul {
+    display: flex;
+    gap: 25px;
+  }
+  .menu-link {
+    font-size: 1rem;
+  }
+  .menu-toggle {
+    display: none;
+  }
+}
+</style>
+
+  
 
   <!-- Intro Profile Section -->
   <div class="profile">
