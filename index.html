@@ -268,12 +268,51 @@ document.addEventListener("DOMContentLoaded", function() {
 </style>
   
 
-  <!-- Intro Profile Section -->
-  <div class="profile">
-    <img src="WhatsApp Image 2025-08-13 at 20.20.24_6037147a.jpg" alt="Profile Picture">
-    <h1 style="font-size:2.4rem; color:#c59aff; margin-bottom:20px;"> 𝐕𝐈𝐂 𝐓𝐎𝐊 🌵🦧</h1>
-    <p><strong>𝐀m a 𝐖𝐞𝐛3 Community 𝐁𝐮𝐢𝐥𝐝𝐞𝐫|| Community 𝐌𝐨𝐝 || 𝐌𝐚𝐫𝐤𝐞𝐭ing specialist || Developer and Graphics || 𝐑𝐚𝐢𝐝 & 𝐒𝐡𝐢𝐥𝐥 𝐋𝐞𝐚𝐝er</strong></p>
+ <!-- Intro Profile Section -->
+<section id="intro-profile" style="background: #000; padding: 100px 20px; text-align: center; position: relative; overflow: hidden;">
+  
+  <!-- Soft Glow Background -->
+  <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+              background: radial-gradient(circle at center, rgba(155, 89, 255, 0.15), transparent 70%);
+              z-index: 0; animation: glowMove 8s infinite alternate ease-in-out;"></div>
+  
+  <!-- Profile Card -->
+  <div style="position: relative; z-index: 1; max-width: 800px; margin: 0 auto; 
+              background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+              border: 1px solid rgba(180, 100, 255, 0.3);
+              box-shadow: 0 0 25px rgba(150, 80, 255, 0.35);
+              border-radius: 16px; padding: 50px 30px; backdrop-filter: blur(10px);">
+
+    <!-- Profile Image -->
+    <img src="WhatsApp Image 2025-08-13 at 20.20.24_6037147a.jpg" 
+         alt="Profile Picture" 
+         style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
+                border: 2px solid #b366ff; box-shadow: 0 0 18px rgba(179, 102, 255, 0.6); margin-bottom: 20px;">
+
+    <!-- Name -->
+    <h1 style="font-size: 2.5rem; color: #c59aff; letter-spacing: 1px; margin-bottom: 15px;">
+      𝐕𝐈𝐂 𝐓𝐎𝐊 🌵🦧
+    </h1>
+
+    <!-- Roles and Positions -->
+    <p style="color: #eee; font-size: 1.1rem; line-height: 1.9; max-width: 680px; margin: 0 auto;">
+      <strong>
+        𝐀m a 𝐖𝐞𝐛3 Community 𝐁𝐮𝐢𝐥𝐝𝐞𝐫 || Community 𝐌𝐨𝐝 || 𝐌𝐚𝐫𝐤𝐞𝐭ing Specialist || 
+        Developer and Graphics || 𝐑𝐚𝐢𝐝 & 𝐒𝐡𝐢𝐥𝐥 𝐋𝐞𝐚𝐝𝐞𝐫
+      </strong>
+    </p>
+
   </div>
+
+  <!-- Glow Animation -->
+  <style>
+    @keyframes glowMove {
+      from { transform: translateY(-20px); opacity: 0.8; }
+      to { transform: translateY(20px); opacity: 1; }
+    }
+  </style>
+
+</section>
 
 
 
