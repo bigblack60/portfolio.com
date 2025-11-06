@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vɪᴄᴛᴏʀ PORTFOLIO</title>
+  <title>𝐕𝐈𝐂𝐓𝐎𝐊 PORTFOLIO</title>
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
@@ -569,43 +569,38 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
- <!-- Proof of Work Section -->
+
+<!-- Proof of Work Section -->
 <section id="proof-of-work" style="padding: 80px 20px; background: #000; text-align: center; position: relative; overflow: hidden;">
 
   <div class="pow-box">
     <h2 style="font-size: 2.4rem; margin-bottom: 22px; color: #c59aff; letter-spacing: 1px;">
-      My Proof of Work 💼
+     My Proof of Work 💼
     </h2>
 
     <p style="font-size: 1.1rem; color: #e4e4e4; line-height: 1.8; margin-bottom: 30px;">
       Welcome to my <strong style="color:#b784ff;">Proof of Work Channel</strong> — a transparent and authentic space where I share my 
       <strong>community growth journey</strong>, from <strong>strategy</strong> to <strong>execution</strong>. 
-      Here, I post <strong>real project updates, behind-the-scenes progress, milestones, and insights</strong> 
+      Here, I post <strong>real project updates, behind the scenes progress, milestones and insights</strong> 
       from my work across various Web3 communities.  
-      Every post reflects <strong>hands-on impact, execution, and results-driven growth</strong> — 
+      Every post reflects <strong>hands on impact, execution and results driven growth</strong>  
       proving that my work doesn’t stop at words, it shows in <strong>action</strong>.
     </p>
 
     <!-- Animated Glowing Button -->
-    <a href="https://t.me/vic_tok02POW" target="_blank" class="glow-btn">
+    <a href="https://t.me/bigblackPOW" target="_blank" class="glow-btn">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" 
-           alt="Telegram" style="width: 22px; height: 22px;">
+           alt="Telegram" class="telegram-icon">
       Join My POW Channel
     </a>
   </div>
 
   <style>
-    /* Box Glow Animation */
-    @keyframes glowBox {
-      from { box-shadow: 0 0 25px rgba(162, 90, 255, 0.2); }
-      to { box-shadow: 0 0 40px rgba(162, 90, 255, 0.4); }
-    }
-
-    /* Button Pulse Animation */
-    @keyframes pulseGlow {
-      0% { box-shadow: 0 0 10px rgba(155, 75, 255, 0.4); transform: scale(1); }
-      50% { box-shadow: 0 0 25px rgba(180, 90, 255, 0.7); transform: scale(1.05); }
-      100% { box-shadow: 0 0 10px rgba(155, 75, 255, 0.4); transform: scale(1); }
+    /* Shared Neon Glow Animation (for both box and button) */
+    @keyframes syncedGlow {
+      0% { box-shadow: 0 0 20px #6a0dad, 0 0 40px rgba(0,136,255,0.2); border-color: #8a2be2; background: linear-gradient(90deg,#6a0dad,#9a4dff); }
+      50% { box-shadow: 0 0 35px #0099ff, 0 0 60px rgba(180,90,255,0.4); border-color: #0099ff; background: linear-gradient(90deg,#0099ff,#b784ff); }
+      100% { box-shadow: 0 0 20px #6a0dad, 0 0 40px rgba(0,136,255,0.2); border-color: #8a2be2; background: linear-gradient(90deg,#6a0dad,#9a4dff); }
     }
 
     /* Fade-In Animation */
@@ -614,25 +609,31 @@ document.addEventListener("DOMContentLoaded", function() {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Main Box Styling */
+    /* Telegram Icon Hover Animation */
+    @keyframes iconSpin {
+      0% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 0 rgba(180, 90, 255, 0)); }
+      50% { transform: rotate(15deg) scale(1.1); filter: drop-shadow(0 0 6px rgba(180, 90, 255, 0.6)); }
+      100% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 0 rgba(180, 90, 255, 0)); }
+    }
+
+    /* Main Box */
     .pow-box {
       max-width: 750px;
       margin: 0 auto;
       background: rgba(25, 10, 45, 0.9);
       padding: 40px 30px;
       border-radius: 16px;
-      border: 1px solid rgba(150, 90, 255, 0.3);
+      border: 2px solid #8a2be2;
       box-shadow: 0 0 30px rgba(162, 90, 255, 0.25);
-      animation: glowBox 3s ease-in-out infinite alternate, fadeUp 1s ease-out forwards;
+      animation: syncedGlow 5s ease-in-out infinite alternate, fadeUp 1.2s ease-out forwards;
       opacity: 0;
     }
 
-    /* Glowing Button */
+    /* Button */
     .glow-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      background: linear-gradient(90deg,#6a0dad,#9a4dff);
       color: #fff;
       padding: 12px 26px;
       border-radius: 10px;
@@ -640,14 +641,25 @@ document.addEventListener("DOMContentLoaded", function() {
       font-weight: 600;
       font-size: 1rem;
       letter-spacing: 0.3px;
-      box-shadow: 0 0 20px rgba(155, 75, 255, 0.6);
-      animation: pulseGlow 2s infinite ease-in-out;
-      transition: transform 0.3s ease, background 0.3s ease;
+      border: 1.5px solid #8a2be2;
+      background: linear-gradient(90deg,#6a0dad,#9a4dff);
+      animation: syncedGlow 5s ease-in-out infinite alternate;
+      transition: transform 0.3s ease;
     }
 
     .glow-btn:hover {
       transform: scale(1.08);
-      background: linear-gradient(90deg,#8a2be2,#b784ff);
+    }
+
+    /* Telegram Icon */
+    .telegram-icon {
+      width: 22px;
+      height: 22px;
+      transition: all 0.4s ease;
+    }
+
+    .glow-btn:hover .telegram-icon {
+      animation: iconSpin 0.8s ease-in-out;
     }
   </style>
 
@@ -658,14 +670,12 @@ document.addEventListener("DOMContentLoaded", function() {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           powBox.style.opacity = '1';
-          powBox.style.animation = 'glowBox 3s ease-in-out infinite alternate, fadeUp 1s ease-out forwards';
         }
       });
     });
     observer.observe(powBox);
   </script>
-</section> 
-
+</section>
 
   <!-- 🪙 COIN SECTION -->
 <section id="coin" style="scroll-margin-top: 100px;">
