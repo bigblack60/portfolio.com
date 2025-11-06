@@ -268,52 +268,168 @@ document.addEventListener("DOMContentLoaded", function() {
 </style>
   
 
- <!-- Intro Profile Section -->
-<section id="intro-profile" style="background: #000; padding: 100px 20px; text-align: center; position: relative; overflow: hidden;">
-  
-  <!-- Soft Glow Background -->
-  <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
-              background: radial-gradient(circle at center, rgba(155, 89, 255, 0.15), transparent 70%);
-              z-index: 0; animation: glowMove 8s infinite alternate ease-in-out;"></div>
-  
-  <!-- Profile Card -->
-  <div style="position: relative; z-index: 1; max-width: 800px; margin: 0 auto; 
-              background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
-              border: 1px solid rgba(180, 100, 255, 0.3);
-              box-shadow: 0 0 25px rgba(150, 80, 255, 0.35);
-              border-radius: 16px; padding: 50px 30px; backdrop-filter: blur(10px);">
+<!-- Intro Profile Section -->
+<section id="intro-profile" style="background:#000; padding:110px 20px; text-align:center; position:relative; overflow:hidden;">
 
-    <!-- Profile Image -->
-    <img src="WhatsApp Image 2025-08-13 at 20.20.24_6037147a.jpg" 
-         alt="Profile Picture" 
-         style="width: 130px; height: 130px; border-radius: 50%; object-fit: cover;
-                border: 2px solid #b366ff; box-shadow: 0 0 18px rgba(179, 102, 255, 0.6); margin-bottom: 20px;">
+  <!-- Soft Animated Glow Background -->
+  <div class="bg-glow"></div>
+
+  <!-- Moving Light Sweep -->
+  <div class="light-sweep"></div>
+
+  <!-- Profile Card -->
+  <div class="profile-card">
+    
+    <!-- Profile Picture Frame -->
+    <div class="pfp-frame">
+      <img src="WhatsApp Image 2025-08-13 at 20.20.24_6037147a.jpg" alt="Profile Picture">
+    </div>
 
     <!-- Name -->
-    <h1 style="font-size: 2.5rem; color: #c59aff; letter-spacing: 1px; margin-bottom: 15px;">
-      𝐕𝐈𝐂𝐓𝐎𝐊 🌵🦧
-    </h1>
+    <h1 class="profile-name">𝐕𝐈𝐂𝐓𝐎𝐊 🌵🦧</h1>
 
-    <!-- Roles and Positions -->
-    <p style="color: #eee; font-size: 1.1rem; line-height: 1.9; max-width: 680px; margin: 0 auto;">
-      <strong>
-        𝐀m a 𝐖𝐞𝐛3 Community 𝐁𝐮𝐢𝐥𝐝𝐞𝐫 || Community 𝐌𝐨𝐝 || 𝐌𝐚𝐫𝐤𝐞𝐭ing Specialist || 
-        Developer and Graphics || 𝐑𝐚𝐢𝐝 & 𝐒𝐡𝐢𝐥𝐥 𝐋𝐞𝐚𝐝𝐞𝐫
-      </strong>
-    </p>
-
+    <!-- Experiences -->
+    <div class="experience-box">
+      <p class="exp-title">Here are my experiences:</p>
+      <p class="exp-list">
+        || 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 𝐈𝐧𝐟𝐫𝐚𝐬𝐭𝐫𝐮𝐜𝐭𝐮𝐫𝐞 𝐁𝐮𝐢𝐥𝐝𝐞𝐫<br>
+        || 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 𝐌𝐚𝐧𝐚𝐠𝐞𝐫<br>
+        || 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 𝐌𝐨𝐝𝐞𝐫𝐚𝐭𝐨𝐫<br>
+        || 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠 𝐒𝐩𝐞𝐜𝐢𝐚𝐥𝐢𝐬𝐭<br>
+        || 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 𝐚𝐧𝐝 𝐆𝐫𝐚𝐩𝐡𝐢𝐜𝐬<br>
+        || 𝐑𝐚𝐢𝐝 & 𝐒𝐡𝐢𝐥𝐥 𝐋𝐞𝐚𝐝𝐞𝐫<br>
+        || 𝐃𝐢𝐬𝐜𝐨𝐫𝐝/𝐓𝐞𝐥𝐞𝐠𝐫𝐚𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐀𝐫𝐜𝐡𝐢𝐭𝐞𝐜𝐭<br>
+        || 𝐁𝐨𝐭 𝐈𝐧𝐭𝐞𝐠𝐫𝐚𝐭𝐢𝐨𝐧 & 𝐀𝐮𝐭𝐨𝐦𝐚𝐭𝐢𝐨𝐧 𝐒𝐩𝐞𝐜𝐢𝐚𝐥𝐢𝐬𝐭
+      </p>
+    </div>
   </div>
 
-  <!-- Glow Animation -->
+  <!-- STYLES -->
   <style>
-    @keyframes glowMove {
-      from { transform: translateY(-20px); opacity: 0.8; }
-      to { transform: translateY(20px); opacity: 1; }
+    /* Background gentle glow */
+    .bg-glow {
+      position:absolute;
+      top:-40%;
+      left:-40%;
+      width:180%;
+      height:180%;
+      background:radial-gradient(circle at center, rgba(145,85,255,0.12), rgba(0,0,0,0.95));
+      animation: driftGlow 6s ease-in-out infinite alternate;
+      z-index:0;
+      filter:blur(60px);
+    }
+
+    @keyframes driftGlow {
+      0% { transform:translateY(-20px); opacity:0.8; }
+      100% { transform:translateY(20px); opacity:1; }
+    }
+
+    /* Light Sweep Animation */
+    .light-sweep {
+      position:absolute;
+      top:0;
+      left:-50%;
+      width:50%;
+      height:100%;
+      background:linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
+      animation: sweep 8s linear infinite;
+      z-index:2;
+      pointer-events:none;
+      filter:blur(5px);
+    }
+
+    @keyframes sweep {
+      0% { left:-60%; opacity:0; }
+      20% { opacity:1; }
+      50% { left:110%; opacity:0.8; }
+      100% { left:110%; opacity:0; }
+    }
+
+    @keyframes softPulse {
+      0% {
+        box-shadow:0 0 25px rgba(150,80,255,0.3), inset 0 0 10px rgba(150,80,255,0.15);
+        border-color:rgba(150,80,255,0.45);
+      }
+      50% {
+        box-shadow:0 0 45px rgba(0,136,255,0.35), inset 0 0 20px rgba(0,136,255,0.2);
+        border-color:rgba(0,136,255,0.55);
+      }
+      100% {
+        box-shadow:0 0 25px rgba(150,80,255,0.3), inset 0 0 10px rgba(150,80,255,0.15);
+        border-color:rgba(150,80,255,0.45);
+      }
+    }
+
+    .profile-card {
+      position:relative;
+      z-index:3;
+      max-width:840px;
+      margin:0 auto;
+      background:rgba(12,8,20,0.92);
+      border:2px solid rgba(150,80,255,0.4);
+      border-radius:22px;
+      padding:70px 40px;
+      box-shadow:0 0 35px rgba(120,60,200,0.25);
+      animation:softPulse 5s ease-in-out infinite alternate;
+      transition:transform 0.3s ease;
+      overflow:hidden;
+    }
+
+    .profile-card:hover {
+      transform:scale(1.015);
+    }
+
+    .pfp-frame {
+      display:inline-block;
+      padding:8px;
+      border-radius:50%;
+      background:linear-gradient(135deg,#6a0dad,#0099ff);
+      box-shadow:0 0 30px rgba(150,80,255,0.35);
+      animation:softPulse 5s ease-in-out infinite alternate;
+    }
+
+    .pfp-frame img {
+      width:165px;
+      height:165px;
+      border-radius:50%;
+      object-fit:cover;
+      border:2px solid #b366ff;
+      box-shadow:0 0 20px rgba(179,102,255,0.5);
+    }
+
+    .profile-name {
+      color:#c59aff;
+      font-size:2.7rem;
+      letter-spacing:1px;
+      margin:28px 0 20px;
+      font-family:'Times New Roman', serif;
+    }
+
+    .experience-box {
+      color:#eee;
+      font-size:1.1rem;
+      line-height:1.9;
+      max-width:720px;
+      margin:0 auto;
+      font-family:'Georgia', serif;
+    }
+
+    .exp-title {
+      color:#b98cff;
+      font-size:1.2rem;
+      margin-bottom:10px;
+      font-weight:bold;
+      letter-spacing:0.5px;
+    }
+
+    .exp-list {
+      color:#f5f5f5;
+      opacity:0.9;
+      font-size:1.05rem;
+      line-height:1.9;
     }
   </style>
-
 </section>
-
 
 
 <!-- About Me -->
@@ -322,7 +438,7 @@ document.addEventListener("DOMContentLoaded", function() {
                box-shadow: 0 0 25px rgba(120,60,255,0.25), inset 0 0 15px rgba(90,0,255,0.1);
                border: 1px solid rgba(150,90,255,0.3); position: relative; z-index:2;">
     
-    <h2 style="font-size:2.4rem; color:#c59aff; margin-bottom:20px;">👋 𝐀𝐛𝐨𝐮𝐭 𝐌𝐞</h2>
+    <h2 style="font-size:2.4rem; color:#c59aff; margin-bottom:20px;">𝐀𝐛𝐨𝐮𝐭 𝐌𝐞</h2>
     <p style="color:#ddd; font-size:1.1rem; line-height:1.8;">
       I’m a <strong>Web3 community specialist</strong> with deep experience in 
       <strong>building, managing, and scaling blockchain communities</strong>.  
@@ -350,12 +466,12 @@ document.addEventListener("DOMContentLoaded", function() {
       <h3 style="color:#c59aff; margin-bottom:15px;">🤝 Connect With Me</h3>
       <p style="color:#aaa; font-size:0.95rem; margin-bottom:20px;">Choose your preferred platform:</p>
 
-      <a href="https://t.me/bigblack60q" target="_blank" 
+      <a href="https://t.me/vic_tok02" target="_blank" 
          style="display:block; color:#0088cc; background:#0d0d0d; border-radius:8px; margin:10px 0; padding:10px 0;
                 font-weight:bold; text-decoration:none; transition:0.3s; box-shadow:0 0 8px rgba(0,136,204,0.4);">
         📩 Telegram
       </a>
-      <a href="https://x.com/bigblack60q" target="_blank" 
+      <a href="https://x.com/vic_tok02" target="_blank" 
          style="display:block; color:#1DA1F2; background:#0d0d0d; border-radius:8px; margin:10px 0; padding:10px 0;
                 font-weight:bold; text-decoration:none; transition:0.3s; box-shadow:0 0 8px rgba(29,161,242,0.4);">
         🐦 X (Twitter)
@@ -569,7 +685,6 @@ document.addEventListener("DOMContentLoaded", function() {
 <!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-
 <!-- Proof of Work Section -->
 <section id="proof-of-work" style="padding: 80px 20px; background: #000; text-align: center; position: relative; overflow: hidden;">
 
@@ -579,16 +694,16 @@ document.addEventListener("DOMContentLoaded", function() {
     </h2>
 
     <p style="font-size: 1.1rem; color: #e4e4e4; line-height: 1.8; margin-bottom: 30px;">
-      Welcome to my <strong style="color:#b784ff;">Proof of Work Channel</strong> — a transparent and authentic space where I share my 
+      Welcome to my <strong style="color:#b784ff;">Proof of Work Channel</strong> a transparent and authentic space where I share my 
       <strong>community growth journey</strong>, from <strong>strategy</strong> to <strong>execution</strong>. 
       Here, I post <strong>real project updates, behind the scenes progress, milestones and insights</strong> 
       from my work across various Web3 communities.  
-      Every post reflects <strong>hands on impact, execution and results driven growth</strong>  
-      proving that my work doesn’t stop at words, it shows in <strong>action</strong>.
+      Every post reflects <strong>hands-on impact, execution and results-driven growth</strong>  
+      proving that my work doesn’t stop at words and it shows in <strong>action</strong>.
     </p>
 
     <!-- Animated Glowing Button -->
-    <a href="https://t.me/bigblackPOW" target="_blank" class="glow-btn">
+    <a href="https://t.me/vic_tok02POW" target="_blank" class="glow-btn">
       <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" 
            alt="Telegram" class="telegram-icon">
       Join My POW Channel
@@ -596,40 +711,45 @@ document.addEventListener("DOMContentLoaded", function() {
   </div>
 
   <style>
-    /* Shared Neon Glow Animation (for both box and button) */
-    @keyframes syncedGlow {
-      0% { box-shadow: 0 0 20px #6a0dad, 0 0 40px rgba(0,136,255,0.2); border-color: #8a2be2; background: linear-gradient(90deg,#6a0dad,#9a4dff); }
-      50% { box-shadow: 0 0 35px #0099ff, 0 0 60px rgba(180,90,255,0.4); border-color: #0099ff; background: linear-gradient(90deg,#0099ff,#b784ff); }
-      100% { box-shadow: 0 0 20px #6a0dad, 0 0 40px rgba(0,136,255,0.2); border-color: #8a2be2; background: linear-gradient(90deg,#6a0dad,#9a4dff); }
+    /* Smooth Dark Glow Animation */
+    @keyframes darkGlow {
+      0% {
+        box-shadow: 0 0 18px #4c0f95, 0 0 32px rgba(0,0,0,0.8);
+        border-color: #5f22b5;
+        background: linear-gradient(90deg,#150826,#200a3a);
+      }
+      50% {
+        box-shadow: 0 0 25px #004e9e, 0 0 40px rgba(0,0,0,0.8);
+        border-color: #0066ff;
+        background: linear-gradient(90deg,#0d152a,#1b0a2d);
+      }
+      100% {
+        box-shadow: 0 0 18px #4c0f95, 0 0 32px rgba(0,0,0,0.8);
+        border-color: #5f22b5;
+        background: linear-gradient(90deg,#150826,#200a3a);
+      }
     }
 
-    /* Fade-In Animation */
+    /* Fade-In Entrance */
     @keyframes fadeUp {
       from { opacity: 0; transform: translateY(40px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Telegram Icon Hover Animation */
-    @keyframes iconSpin {
-      0% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 0 rgba(180, 90, 255, 0)); }
-      50% { transform: rotate(15deg) scale(1.1); filter: drop-shadow(0 0 6px rgba(180, 90, 255, 0.6)); }
-      100% { transform: rotate(0deg) scale(1); filter: drop-shadow(0 0 0 rgba(180, 90, 255, 0)); }
-    }
-
-    /* Main Box */
+    /* Box Styling */
     .pow-box {
       max-width: 750px;
       margin: 0 auto;
-      background: rgba(25, 10, 45, 0.9);
-      padding: 40px 30px;
+      background: rgba(15, 10, 25, 0.95);
+      padding: 45px 35px;
       border-radius: 16px;
-      border: 2px solid #8a2be2;
-      box-shadow: 0 0 30px rgba(162, 90, 255, 0.25);
-      animation: syncedGlow 5s ease-in-out infinite alternate, fadeUp 1.2s ease-out forwards;
+      border: 2px solid #5f22b5;
+      animation: darkGlow 5s ease-in-out infinite alternate, fadeUp 1.2s ease-out forwards;
+      box-shadow: 0 0 28px rgba(90, 40, 180, 0.25);
       opacity: 0;
     }
 
-    /* Button */
+    /* Button Glow */
     .glow-btn {
       display: inline-flex;
       align-items: center;
@@ -641,30 +761,33 @@ document.addEventListener("DOMContentLoaded", function() {
       font-weight: 600;
       font-size: 1rem;
       letter-spacing: 0.3px;
-      border: 1.5px solid #8a2be2;
-      background: linear-gradient(90deg,#6a0dad,#9a4dff);
-      animation: syncedGlow 5s ease-in-out infinite alternate;
-      transition: transform 0.3s ease;
+      border: 1.5px solid #6f3ac7;
+      background: linear-gradient(90deg,#3a0f6e,#1c0c38);
+      box-shadow: 0 0 18px rgba(140, 60, 255, 0.3);
+      transition: all 0.3s ease;
+      animation: darkGlow 5s ease-in-out infinite alternate;
     }
 
     .glow-btn:hover {
       transform: scale(1.08);
+      box-shadow: 0 0 30px rgba(160, 90, 255, 0.45);
     }
 
     /* Telegram Icon */
     .telegram-icon {
       width: 22px;
       height: 22px;
-      transition: all 0.4s ease;
+      transition: transform 0.4s ease;
     }
 
     .glow-btn:hover .telegram-icon {
-      animation: iconSpin 0.8s ease-in-out;
+      transform: rotate(15deg) scale(1.1);
+      filter: drop-shadow(0 0 6px rgba(180,90,255,0.7));
     }
   </style>
 
   <script>
-    // Fade-in when in view
+    // Fade-in effect on scroll
     const powBox = document.querySelector('.pow-box');
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -676,6 +799,7 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(powBox);
   </script>
 </section>
+
 
   <!-- 🪙 COIN SECTION -->
 <section id="coin" style="scroll-margin-top: 100px;">
