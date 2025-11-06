@@ -268,6 +268,8 @@ document.addEventListener("DOMContentLoaded", function() {
 </style>
   
 
+
+
 <!-- Intro Profile Section -->
 <section id="intro-profile" style="background:#000; padding:110px 20px; text-align:center; position:relative; overflow:hidden;">
 
@@ -286,15 +288,15 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
 
     <!-- Name -->
-    <h1 class="profile-name">𝐕𝐈𝐂𝐓𝐎𝐊 🌵🦧</h1>
+    <h1 class="profile-name glow-name">𝐕𝐈𝐂𝐓𝐎𝐊 🌵🦧</h1>
 
-    <!-- Experiences -->
-    <div class="experience-box">
+    <!-- Inner Card for Experiences -->
+    <div class="experience-subcard">
       <p class="exp-title">Here are my experiences:</p>
       <p class="exp-list">
         || 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 𝐈𝐧𝐟𝐫𝐚𝐬𝐭𝐫𝐮𝐜𝐭𝐮𝐫𝐞 𝐁𝐮𝐢𝐥𝐝𝐞𝐫<br>
         || 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 𝐌𝐚𝐧𝐚𝐠𝐞𝐫<br>
-        || 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 𝐌𝐨𝐝𝐞𝐫𝐚𝐭𝐨𝐫<br>
+        || 𝐂𝐨𝐦𝐦𝐮𝐧𝐢𝐭𝐲 𝐌𝐨𝐝<br>
         || 𝐌𝐚𝐫𝐤𝐞𝐭𝐢𝐧𝐠 𝐒𝐩𝐞𝐜𝐢𝐚𝐥𝐢𝐬𝐭<br>
         || 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫 𝐚𝐧𝐝 𝐆𝐫𝐚𝐩𝐡𝐢𝐜𝐬<br>
         || 𝐑𝐚𝐢𝐝 & 𝐒𝐡𝐢𝐥𝐥 𝐋𝐞𝐚𝐝𝐞𝐫<br>
@@ -324,7 +326,7 @@ document.addEventListener("DOMContentLoaded", function() {
       100% { transform:translateY(20px); opacity:1; }
     }
 
-    /* Light Sweep Animation */
+    /* Light Sweep Animation (3s) */
     .light-sweep {
       position:absolute;
       top:0;
@@ -332,7 +334,7 @@ document.addEventListener("DOMContentLoaded", function() {
       width:50%;
       height:100%;
       background:linear-gradient(120deg, transparent, rgba(255,255,255,0.08), transparent);
-      animation: sweep 8s linear infinite;
+      animation: sweep 3s linear infinite;
       z-index:2;
       pointer-events:none;
       filter:blur(5px);
@@ -345,6 +347,7 @@ document.addEventListener("DOMContentLoaded", function() {
       100% { left:110%; opacity:0; }
     }
 
+    /* Glow Animation */
     @keyframes softPulse {
       0% {
         box-shadow:0 0 25px rgba(150,80,255,0.3), inset 0 0 10px rgba(150,80,255,0.15);
@@ -360,6 +363,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
 
+    /* Profile Card */
     .profile-card {
       position:relative;
       z-index:3;
@@ -371,55 +375,74 @@ document.addEventListener("DOMContentLoaded", function() {
       padding:70px 40px;
       box-shadow:0 0 35px rgba(120,60,200,0.25);
       animation:softPulse 5s ease-in-out infinite alternate;
-      transition:transform 0.3s ease;
       overflow:hidden;
     }
 
-    .profile-card:hover {
-      transform:scale(1.015);
-    }
-
+    /* Profile Picture Frame (color changes every 2s) */
     .pfp-frame {
       display:inline-block;
-      padding:8px;
+      padding:10px;
       border-radius:50%;
-      background:linear-gradient(135deg,#6a0dad,#0099ff);
-      box-shadow:0 0 30px rgba(150,80,255,0.35);
-      animation:softPulse 5s ease-in-out infinite alternate;
+      animation: colorCycle 2s linear infinite, softPulse 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes colorCycle {
+      0% { background:linear-gradient(135deg, #6a0dad, #0099ff); }
+      20% { background:linear-gradient(135deg, #ffffff, #8a2be2); }
+      40% { background:linear-gradient(135deg, #00ffcc, #0066ff); }
+      60% { background:linear-gradient(135deg, #ff00ff, #00ffff); }
+      80% { background:linear-gradient(135deg, #ff6600, #00cc99); }
+      100% { background:linear-gradient(135deg, #6a0dad, #0099ff); }
     }
 
     .pfp-frame img {
-      width:165px;
-      height:165px;
+      width:185px;
+      height:185px;
       border-radius:50%;
       object-fit:cover;
       border:2px solid #b366ff;
-      box-shadow:0 0 20px rgba(179,102,255,0.5);
+      box-shadow:0 0 25px rgba(179,102,255,0.6);
     }
 
+    /* Name Styling */
     .profile-name {
       color:#c59aff;
-      font-size:2.7rem;
-      letter-spacing:1px;
-      margin:28px 0 20px;
+      font-size:2.8rem;
+      letter-spacing:1.5px;
+      margin:28px 0 25px;
       font-family:'Times New Roman', serif;
+      position:relative;
     }
 
-    .experience-box {
-      color:#eee;
-      font-size:1.1rem;
-      line-height:1.9;
-      max-width:720px;
-      margin:0 auto;
-      font-family:'Georgia', serif;
+    /* Name glow pulse effect */
+    .glow-name {
+      animation: namePulse 3s ease-in-out infinite;
     }
 
+    @keyframes namePulse {
+      0% { text-shadow: 0 0 10px rgba(190,130,255,0.6), 0 0 20px rgba(160,90,255,0.3); }
+      50% { text-shadow: 0 0 25px rgba(120,160,255,0.8), 0 0 45px rgba(150,80,255,0.6); }
+      100% { text-shadow: 0 0 10px rgba(190,130,255,0.6), 0 0 20px rgba(160,90,255,0.3); }
+    }
+
+    /* Experience Sub-Card */
+    .experience-subcard {
+      background:rgba(22,15,35,0.9);
+      border:2px solid rgba(150,80,255,0.4);
+      border-radius:16px;
+      padding:25px 25px;
+      margin-top:20px;
+      animation:softPulse 5s ease-in-out infinite alternate;
+    }
+
+    /* Experience Title & List */
     .exp-title {
       color:#b98cff;
       font-size:1.2rem;
-      margin-bottom:10px;
+      margin-bottom:12px;
       font-weight:bold;
       letter-spacing:0.5px;
+      text-align:left;
     }
 
     .exp-list {
@@ -427,10 +450,15 @@ document.addEventListener("DOMContentLoaded", function() {
       opacity:0.9;
       font-size:1.05rem;
       line-height:1.9;
+      font-family:'Georgia', serif;
+      text-align:left;
+      white-space:pre-line;
     }
   </style>
 </section>
 
+
+  
 
 <!-- About Me -->
 <section id="about" style="padding: 90px 20px; background: linear-gradient(180deg,#050008 0%,#0a0014 100%); text-align: center; position: relative; overflow:hidden;">
